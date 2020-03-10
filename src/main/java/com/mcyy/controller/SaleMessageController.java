@@ -72,7 +72,7 @@ public class SaleMessageController {
     }
 
     @RequestMapping(value = "/submitting_add", method = {RequestMethod.GET, RequestMethod.POST})
-    public void submitting(HttpServletRequest request) throws ParseException {
+    public String submitting(HttpServletRequest request) throws ParseException {
 
         //数据库salemessage表存的是用户id和药名id，所以，此处获取的是id
         String userName_id = request.getParameter("UserName_id");
@@ -95,7 +95,7 @@ public class SaleMessageController {
 
         smsi.InsertSalemsg(salesmessage);
 
-//        return "SaleMessage";
+        return "SaleMessage";
     }
 
 }

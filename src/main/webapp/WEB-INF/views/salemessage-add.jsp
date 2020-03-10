@@ -39,7 +39,7 @@
 </head>
 <body>
 <div class="page-container">
-    <form action="" method="post" class="form form-horizontal" id="form-article-add">
+    <div action="" method="post" class="form form-horizontal" id="form-article-add">
 
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">选择用户：</label>
@@ -90,7 +90,7 @@
                 </button>
             </div>
         </div>
-    </form>
+    </div>
 </div>
 
 <!--_footer 作为公共模版分离出去-->
@@ -117,24 +117,24 @@
         var date = $("#date").val();
         var count = $("#count").val();
 
+        //layui关闭弹出层
+        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
         $.ajax({
             type : "POST",
-            //async:true,//异步方式,直到服务器端返回数据后，触发$.ajax里的success方法
+            dataType : "text",
+            //async:false,//异步方式,直到服务器端返回数据后，触发$.ajax里的success方法
             data : {
-                "UserName_id" : changeuser,
-                "DrugName_id" : changemedicine,
-                "Purchased" : count,
-                "SalesTime" : date,
+                'UserName_id' : changeuser,
+                'DrugName_id' : changemedicine,
+                'Purchased' : count,
+                'SalesTime' : date,
             },
             url : "${pageContext.request.contextPath}/submitting_add",
-            success : function () {
-                //layui关闭弹出层,
-                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+            success : function (data) {
                 parent.layer.close(index);
-            }
+            },
+
         });
-
-
 
     }
 

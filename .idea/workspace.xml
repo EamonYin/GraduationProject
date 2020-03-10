@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66abd22b-0cd7-47fc-8059-9415223cecda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mcyy/WEB-INF/views/salemessage-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mcyy/WEB-INF/views/salemessage-add.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -226,7 +227,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -653,7 +654,7 @@
       <workItem from="1583640796035" duration="12428000" />
       <workItem from="1583714718716" duration="598000" />
       <workItem from="1583806545545" duration="8294000" />
-      <workItem from="1583846928633" duration="431000" />
+      <workItem from="1583846928633" duration="716000" />
     </task>
     <task id="LOCAL-00001" summary="添加取消按钮，调整保存按钮前端逻辑">
       <created>1583847170695</created>
@@ -666,7 +667,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204603000" />
+    <option name="totallyTimeSpent" value="204888000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,10 +687,10 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.25737265" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.25737265" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.32956153" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32956153" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50067025" side_tool="true" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.16572239" />
@@ -699,7 +700,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3286119" />
-      <window_info anchor="bottom" x="-17" y="654" width="1021" height="217" id="Run" order="11" sideWeight="0.49932975" visible="true" weight="0.16713881" />
+      <window_info anchor="bottom" x="-17" y="654" width="1021" height="217" id="Run" order="11" sideWeight="0.49932975" weight="0.16713881" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.35410765" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />

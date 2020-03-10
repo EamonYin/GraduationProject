@@ -86,7 +86,7 @@ public class SaleMessageController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date date = simpleDateFormat.parse(salesTime);
 
-
+        //将前台获取数据持久化到数据库中
         Salesmessage salesmessage = new Salesmessage();
         salesmessage.setSmInventory(Integer.parseInt(purchased));
         salesmessage.setSmMedicineid(Integer.parseInt(drugName_id));

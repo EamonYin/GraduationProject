@@ -127,14 +127,22 @@
                 "SalesTime" : date,
             },
             url : "${pageContext.request.contextPath}/submitting_add",
-
+            success : function () {
+                //layui关闭弹出层
+                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                parent.layer.close(index);
+            }
         });
 
-        //layui关闭弹出层
-        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-        parent.layer.close(index);
+
 
     }
+
+    function layer_close() {
+        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+        parent.layer.close(index);
+    }
+
 </script>
 </body>
 </html>

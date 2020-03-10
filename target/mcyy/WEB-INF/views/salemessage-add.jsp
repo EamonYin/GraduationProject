@@ -127,24 +127,22 @@
                 "SalesTime" : date,
             },
             url : "${pageContext.request.contextPath}/submitting_add",
-            // success : function () {
-                // $(".page-container").modal('hide')
-                /*var index = parent.layer.getFrameIndex(window.name);
-                parent.layer.close(index);*/
-
-                // layer.close(".page-container")
-
-            // }
+            success : function () {
+                //layui关闭弹出层
+                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                parent.layer.close(index);
+            }
         });
 
+
+
+    }
+
+    function layer_close() {
         var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
         parent.layer.close(index);
-
-        // parent.layer.close(parent.layer.index);
-
-        // location.href = "/salemessage";
-        <%--window.location.href ="${pageContext.request.contextPath}/salemessage2";--%>
     }
+
 </script>
 </body>
 </html>

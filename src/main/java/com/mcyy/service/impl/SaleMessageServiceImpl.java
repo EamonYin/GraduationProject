@@ -1,7 +1,10 @@
 package com.mcyy.service.impl;
 
+import com.mcyy.dao.mapper.MedicineMapper;
 import com.mcyy.dao.mapper.Salesmessage2Mapper;
 import com.mcyy.dao.mapper.SalesmessageMapper;
+import com.mcyy.entity.Medicine;
+import com.mcyy.entity.MedicineExample;
 import com.mcyy.entity.Salesmessage;
 import com.mcyy.entity.SalesmessageExample;
 import com.mcyy.service.SaleMessageService;
@@ -23,6 +26,9 @@ public class SaleMessageServiceImpl implements SaleMessageService {
     @Autowired
     SalesmessageMapper salesmessageMapper;
 
+    @Autowired
+    MedicineMapper medicineMapper;
+
     @Override
     public List<Salesmessage> SellectAllSalesmessage() {
         return salesmessage2Mapper.SelectAllSalesmessage();
@@ -31,5 +37,15 @@ public class SaleMessageServiceImpl implements SaleMessageService {
     @Override
     public int InsertSalemsg(Salesmessage salesmessage) {
         return salesmessageMapper.insert(salesmessage);
+    }
+
+    @Override
+    public Medicine SelectMedicine(Integer mId) {
+        return medicineMapper.selectByPrimaryKey(mId);
+    }
+
+    @Override
+    public int UpdateInventory(Medicine record, MedicineExample example) {
+        return medicineMapper.updateByExampleSelective(record,example);
     }
 }

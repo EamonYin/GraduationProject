@@ -1,5 +1,7 @@
 package com.mcyy.service;
 
+import com.mcyy.entity.Medicine;
+import com.mcyy.entity.MedicineExample;
 import com.mcyy.entity.Salesmessage;
 import com.mcyy.entity.SalesmessageExample;
 
@@ -15,5 +17,12 @@ public interface SaleMessageService {
 
     //插入销售信息
     int InsertSalemsg(Salesmessage salesmessage);
+
+    //查询对应id的药品库存
+    Medicine SelectMedicine(Integer mId);
+
+    //更新medicine表库存
+    int UpdateInventory(Medicine record, MedicineExample example);
+
 
 }

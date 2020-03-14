@@ -3,7 +3,7 @@ package com.mcyy.dao.mapper;
 import com.mcyy.entity.Salesmessage;
 import org.apache.ibatis.annotations.Param;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 public interface Salesmessage2Mapper {

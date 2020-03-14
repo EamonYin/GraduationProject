@@ -23,19 +23,19 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>品牌管理</title>
+    <title>销售记录查询</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span
-        class="c-gray en">&gt;</span> 品牌管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 销售信息 <span
+        class="c-gray en">&gt;</span> 销售记录查询 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
                                               href="javascript:location.replace(location.href);" title="刷新"><i
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
     <div class="text-c">
 
-        <form enctype="multipart/form-data" action="list" method="post" class="Huiform">
+        <form enctype="multipart/form-data" action="/upload" method="post" class="Huiform">
             <input type="file" name="file" class="input-text" style="width:200px">
-            <input type="submit" value="上传工作文件" name="导入" class="btn btn-primary upload-btn">
+            <input type="submit" value="上传工作文件" name="导入" onclick="upload_success()" class="upload_success btn btn-primary upload-btn">
         </form>
 
     </div>
@@ -49,7 +49,7 @@
     </select>
 	<a <%--href="${pageContext.request.contextPath}/addsalemessage"--%>
             href="javascript:;" onclick="admin_role_add('添加销售记录','${pageContext.request.contextPath}/addsalemessage','800')"
-            class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加销售记录</a>
+            class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加销售记录 </a>
 	</span></div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-sort">
@@ -87,10 +87,16 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-
+    //弹出层页面
     function admin_role_add(title,url,w,h){
         layer_show(title,url,w,h);
     }
+
+    //提交成功提示
+    $(".upload_success").click(function upload_success() {
+       alert("文件上传成功！");
+    });
+
 
     function haha(){
         cuname = $("#changeuser").val();
@@ -106,7 +112,7 @@
     }
 
     $('.table-sort').dataTable({
-        "aaSorting": [[1, "desc"]],//默认第几个排序
+        "aaSorting": [[0 , "asc"]],//默认第几个排序
         "bStateSave": true,//状态保存
         "aoColumnDefs": [
             {"orderable": false, "aTargets": [0, 4]}// 制定列不参与排序

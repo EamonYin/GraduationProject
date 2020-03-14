@@ -8,12 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.SimpleFormatter;
@@ -88,13 +93,56 @@ public class SaleMessageController {
 
         //将前台获取数据持久化到数据库中
         Salesmessage salesmessage = new Salesmessage();
-        salesmessage.setSmInventory(Integer.parseInt(purchased));
-        salesmessage.setSmMedicineid(Integer.parseInt(drugName_id));
+        int Inventory = Integer.parseInt(purchased);
+        salesmessage.setSmInventory(Inventory);
+        int Medicineid = Integer.parseInt(drugName_id);
+        salesmessage.setSmMedicineid(Medicineid);
         salesmessage.setSmUserid(Integer.parseInt(userName_id));
         salesmessage.setSmData(date);
 
         smsi.InsertSalemsg(salesmessage);
 
+        //更新medicine表库存
+        Medicine medicine1 = smsi.SelectMedicine(Medicineid);
+        Integer OldInventory = medicine1.getmInventory();
+        Medicine medicine = new Medicine();
+        Integer NewInventory = OldInventory - Inventory;
+        medicine.setmInventory(NewInventory);
+        MedicineExample medicineExample = new MedicineExample();
+        MedicineExample.Criteria criteria = medicineExample.createCriteria();
+        criteria.andMIdEqualTo(Medicineid);
+        int i = smsi.UpdateInventory(medicine, medicineExample);
+        System.out.println("添加后，库存更新："+i);
+
+        return "SaleMessage";
+    }
+
+    /**
+     * 文件上传功能
+     * @param file
+     * @return
+     * @throws IOException
+     */
+    //获取当此上传文件名
+    String fileName = null;
+    //存储每一次上传的文件名
+    List<Object> allfilename = new ArrayList<>();
+    @RequestMapping(value="/upload",method=RequestMethod.POST)
+    public String upload(MultipartFile file) throws IOException {
+        //得到上传文件名
+        fileName = file.getOriginalFilename();
+        //存储每一次上传的文件名
+        allfilename.add(fileName);
+        //文件上传地址
+        String path = "F:\\file";
+        //创建文件流
+        File dir = new File(path,fileName);
+        //如果父目录不存在，连同父目录一起创建。
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+        //MultipartFile自带的解析方法
+        file.transferTo(dir);
         return "SaleMessage";
     }
 

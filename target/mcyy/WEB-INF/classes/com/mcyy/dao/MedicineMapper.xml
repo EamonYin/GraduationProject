@@ -273,4 +273,10 @@
       m_remark = #{mRemark,jdbcType=VARCHAR}
     where m_id = #{mId,jdbcType=INTEGER}
   </update>
+
+  <!--查询指定的添加药品，并返回m_id(int)-->
+  <select id="SelectTheDrugId" resultType="Integer">
+    select * from medicine where m_name = #{m_name} and m_price = #{m_price} and m_inventory = #{m_inventory} and m_pastdate =#{m_pastdate} and m_classify = #{m_classify};
+  </select>
+
 </mapper>

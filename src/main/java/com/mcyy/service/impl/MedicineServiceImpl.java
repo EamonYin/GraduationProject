@@ -23,4 +23,24 @@ public class MedicineServiceImpl implements MedicineService {
     public List<Medicine> selectAll(MedicineExample example) {
         return medicineMapper.selectByExample(example);
     }
+
+    @Override
+    public int updaterk(Medicine record,MedicineExample example) {
+        return medicineMapper.updateByExampleSelective(record,example);
+    }
+
+    @Override
+    public List<Medicine> selectMedicine(MedicineExample example) {
+        return medicineMapper.selectByExample(example);
+    }
+    @Override
+    public int updateMedicine(Medicine record, MedicineExample example) {
+        return medicineMapper.updateByExampleSelective(record,example);
+    }
+
+    @Override
+    public int deleteMedicine(MedicineExample example) {
+        return medicineMapper.deleteByExample(example);
+    }
+
 }

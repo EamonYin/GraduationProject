@@ -82,10 +82,10 @@
 		</dd>
 	</dl>
 		<dl id="menu-picture">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 库存管理模块<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe613;</i> 药品管理模块 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="inventory" data-title="库存记录" href="javascript:void(0)">库存记录</a></li>
+					<li><a data-href="/GoDrugManage" data-title="药品管理" href="javascript:void(0)">药品操作</a></li>
 					<%--<li><a data-href="picture-list.html" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>--%>
 			</ul>
 		</dd>

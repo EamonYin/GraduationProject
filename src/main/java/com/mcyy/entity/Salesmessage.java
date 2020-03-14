@@ -15,7 +15,9 @@ public class Salesmessage {
 
     //Salesmessage2Mapper中添加的两个对象
 
-    private User user;
+//    private User user;
+
+    private Client client;
 
     private Medicine medicine;
 
@@ -59,12 +61,12 @@ public class Salesmessage {
         this.smInventory = smInventory;
     }
 
-    public User getUser() {
-        return user;
+    public Client getClient() {
+        return client;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public Medicine getMedicine() {
@@ -72,6 +74,19 @@ public class Salesmessage {
     }
 
     public void setMedicine(Medicine medicine) {
+        this.medicine = medicine;
+    }
+
+    public Salesmessage() {
+    }
+
+    public Salesmessage(Integer smId, Integer smMedicineid, Integer smUserid, Date smData, Integer smInventory, Client client, Medicine medicine) {
+        this.smId = smId;
+        this.smMedicineid = smMedicineid;
+        this.smUserid = smUserid;
+        this.smData = smData;
+        this.smInventory = smInventory;
+        this.client = client;
         this.medicine = medicine;
     }
 
@@ -83,7 +98,7 @@ public class Salesmessage {
                 ", smUserid=" + smUserid +
                 ", smData=" + smData +
                 ", smInventory=" + smInventory +
-                ", user=" + user +
+                ", client=" + client +
                 ", medicine=" + medicine +
                 '}';
     }

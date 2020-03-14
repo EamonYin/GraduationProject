@@ -69,7 +69,7 @@
                 <td>${sale.smInventory}件</td>
                 <td>${sale.medicine.mPrice}元</td>
                 <td> <fmt:formatDate value="${sale.smData}" pattern="yyyy年MM月dd日"/> </td>
-                <td>${sale.user.uUsername}</td>
+                <td>${sale.client.cClientname}</td>
             </tr>
             </c:forEach>
             </tbody>

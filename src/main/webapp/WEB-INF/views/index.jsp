@@ -46,16 +46,16 @@
 		</nav>
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 			<ul class="cl">
-				<li>超级管理员</li>
+				<li><%--超级管理员--%></li>
 				<li class="dropDown dropDown_hover">
-					<a href="#" class="dropDown_A">root <i class="Hui-iconfont">&#xe6d5;</i></a>
+					<a href="#" class="dropDown_A" >${user.uLimit == '1' ?   '超级管理员' : '管理员'}<i class="Hui-iconfont">&#xe6d5;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
 <%--						<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>--%>
 <%--						<li><a href="#">切换账户</a></li>--%>
 						<li><a href="${pageContext.request.contextPath}/login">退出</a></li>
 				</ul>
 			</li>
-				<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+<%--				<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>--%>
 				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
 						<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
@@ -149,18 +149,18 @@
 			</ul>
 		</dd>
 	</dl>
-<%--		<dl id="menu-system">--%>
-<%--			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>--%>
-<%--			<dd>--%>
-<%--				<ul>--%>
-<%--					<li><a data-href="system-base.html" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>--%>
-<%--					<li><a data-href="system-category.html" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>--%>
-<%--					<li><a data-href="system-data.html" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>--%>
-<%--					<li><a data-href="system-shielding.html" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>--%>
-<%--					<li><a data-href="system-log.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>--%>
-<%--			</ul>--%>
-<%--		</dd>--%>
-<%--	</dl>--%>
+		<dl id="menu-system" style="display: ${user.uLimit == '1' ? "" : "none"}">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 账户管理 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="system-base.html" data-title="系统设置" href="javascript:void(0)">工作人员权限分配</a></li>
+					<li><a data-href="system-category.html" data-title="栏目管理" href="javascript:void(0)">顾客账号管理</a></li>
+					<%--<li><a data-href="system-data.html" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
+					<li><a data-href="system-shielding.html" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>
+					<li><a data-href="system-log.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>--%>
+			</ul>
+		</dd>
+	</dl>
 </div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>

@@ -49,7 +49,7 @@
     </select>
 	<a <%--href="${pageContext.request.contextPath}/addsalemessage"--%>
             href="javascript:;" onclick="admin_role_add('添加销售记录','${pageContext.request.contextPath}/addsalemessage','800')"
-            class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加销售记录</a>
+            class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加销售记录 </a>
 	</span></div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-sort">
@@ -69,7 +69,7 @@
                 <td>${sale.smInventory}件</td>
                 <td>${sale.medicine.mPrice}元</td>
                 <td> <fmt:formatDate value="${sale.smData}" pattern="yyyy年MM月dd日"/> </td>
-                <td>${sale.user.uUsername}</td>
+                <td>${sale.client.cClientname}</td>
             </tr>
             </c:forEach>
             </tbody>

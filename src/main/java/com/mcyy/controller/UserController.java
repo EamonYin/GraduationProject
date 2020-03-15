@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -48,12 +49,16 @@ public class UserController {
             System.out.println("增强循环" + username + pwd);
 
             //管理人员进入index首页
-            if (uname.equals(username) && password.equals(pwd)&& limit==0) {
+            if (uname.equals(username) && password.equals(pwd)&& limit != 0) {
                 System.out.println("1111111111111111111111111");
+
+                HttpSession session = request.getSession();
+                session.setAttribute("user",u);
+
                 return "index";
 
             //非管理员进入 medicineList 页面
-            }else if(uname.equals(username) && password.equals(pwd) && limit!=0){
+            }else if(uname.equals(username) && password.equals(pwd) && limit!=2){
                 return "redirect:/medicineList";
             }
         }
@@ -79,7 +84,7 @@ public class UserController {
             User user = new User();
             user.setuUsername(rname);
             user.setuPassword(rpassword);
-            user.setuLimit(0);
+            user.setuLimit(2);//默认注册管理员
             usi.InsertUser(user);
             return "login";
 

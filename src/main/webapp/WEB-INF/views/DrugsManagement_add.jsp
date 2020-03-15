@@ -32,7 +32,7 @@
     <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/static/login-ui/js/need/laydate.css"/>
+          href="${pageContext.request.contextPath}/static-ui/js/need/laydate.css"/>
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/login-ui/js/laydate.js"></script>
 

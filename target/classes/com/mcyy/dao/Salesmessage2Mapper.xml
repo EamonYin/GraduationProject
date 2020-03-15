@@ -9,11 +9,17 @@
         <result column="sm_data" property="smData"/>
         <result column="sm_inventory" property="smInventory"/>
 
-        <association property="user" javaType="com.mcyy.entity.User">
+        <!--<association property="user" javaType="com.mcyy.entity.User">
             <id column="u_id" property="uId"/>
             <result column="u_username" property="uUsername"/>
             <result column="u_password" property="uPassword"/>
             <result column="u_limit" property="uLimit"/>
+        </association>-->
+
+        <association property="client" javaType="com.mcyy.entity.Client">
+            <id column="c_id" property="cId"/>
+            <result column="c_clientname" property="cClientname"/>
+            <result column="c_password" property="cPassword"/>
         </association>
 
         <association property="medicine" javaType="com.mcyy.entity.Medicine">
@@ -30,7 +36,7 @@
     </resultMap>
 
     <select id="SelectAllSalesmessage" resultMap="SelectSale">
-        select * from medicine m ,user u,salesmessage s where  s.sm_medicineid=m.m_id and u.u_id=s.sm_userid
+        select * from medicine m ,client c,salesmessage s where  s.sm_medicineid=m.m_id and c.c_id=s.sm_userid
     </select>
 
     <select id="SelectDayInventory" resultMap="SelectSale">

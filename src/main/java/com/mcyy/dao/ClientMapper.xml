@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mcyy.dao.mapper.ClientMapper">
+
+    <resultMap id="ClientPOJO" type="com.mcyy.entity.Client">
+        <id column="c_id" jdbcType="INTEGER" property="cId"/>
+        <result column="c_clientname" jdbcType="VARCHAR" property="cClientname"/>
+        <result column="c_password" jdbcType="VARCHAR" property="cPassword"/>
+        <result column="c_phonenum" jdbcType="VARCHAR" property="cPhonenum"/>
+
+    </resultMap>
+
+    <select id="SelectTheClient" resultMap="ClientPOJO">
+        select * from client where c_clientname = #{cClientname} and c_phonenum = #{cPhonenum}
+    </select>
+
+    <insert id="InsertTheClient" useGeneratedKeys="true" keyProperty="cId" parameterType="com.mcyy.entity.Client">
+        insert into client (c_clientname,c_password,c_phonenum) VALUES (#{cClientname} , #{cPassword} , #{cPhonenum})
+    </insert>
+
+</mapper>

@@ -41,7 +41,8 @@
 <div class="page-container">
     <div action="" method="post" class="form form-horizontal" id="form-article-add">
 
-        <div class="row cl">
+        <%--0315老版本，选择指定用户，不能创建新用户--%>
+        <%--<div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">选择用户：</label>
             <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
 				<select name="unames" class="select" id="changeuser" >
@@ -51,7 +52,24 @@
                 </c:forEach>
 				</select>
 				</span></div>
+        </div>--%>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">购买者姓名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="" id="cname" placeholder="" value="" class="input-text" style="width:90%">
+                件
+            </div>
         </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">购买者手机号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="" id="cphone" placeholder="" value="" class="input-text" style="width:90%">
+                件
+            </div>
+        </div>
+
 
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">选择药品：</label>
@@ -63,7 +81,7 @@
                 </c:forEach>
 				</select>
 				</span></div>
-            </div>
+        </div>
 
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">购买数量：</label>
@@ -75,14 +93,15 @@
 
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">销售时间：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" autocomplete="off" id="date" placeholder="请输入日期" class="input-text Wdate"
-                               style="width:180px;"   onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
-                    </div>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" autocomplete="off" id="date" placeholder="请输入日期" class="input-text Wdate"
+                       style="width:180px;" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+            </div>
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button onclick="sub()" <%--onClick="article_save_submit();"--%> class="btn btn-primary radius" <%--type="submit"--%>><i
+                <button onclick="sub()" <%--onClick="article_save_submit();"--%>
+                        class="btn btn-primary radius" <%--type="submit"--%>><i
                         class="Hui-iconfont">&#xe632;</i> 保存并提交
                 </button>
                 <button onClick="layer_close();" class="btn btn-default radius" type="button">
@@ -110,27 +129,33 @@
 <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 
-    function sub(){
+    function sub() {
+        <%--0315老版本，选择指定用户，不能创建新用户--%>
+        // var changeuser = $("#changeuser option:selected").val();
 
-        var changeuser = $("#changeuser option:selected").val();  //获取选中的项
-        var changemedicine = $("#changemedicine option:selected").val();
+        var cname = $("#cname").val();
+        var cphone = $("#cphone").val();
+        var changemedicine = $("#changemedicine option:selected").val();//获取选中的项
         var date = $("#date").val();
         var count = $("#count").val();
+
+        alert(cname+cphone);
 
         //layui关闭弹出层
         var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
         $.ajax({
-            type : "POST",
-            dataType : "text",
+            type: "POST",
+            dataType: "text",
             //async:false,//异步方式,直到服务器端返回数据后，触发$.ajax里的success方法
-            data : {
-                'UserName_id' : changeuser,
-                'DrugName_id' : changemedicine,
-                'Purchased' : count,
-                'SalesTime' : date,
+            data: {
+                'ClientName': cname,
+                'ClientPhone' : cphone,
+                'DrugName_id': changemedicine,
+                'Purchased': count,
+                'SalesTime': date,
             },
-            url : "${pageContext.request.contextPath}/submitting_add",
-            success : function (data) {
+            url: "${pageContext.request.contextPath}/submitting_add",
+            success: function (data) {
                 parent.layer.close(index);
             },
 

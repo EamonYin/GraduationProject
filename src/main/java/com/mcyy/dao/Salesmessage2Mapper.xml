@@ -20,6 +20,7 @@
             <id column="c_id" property="cId"/>
             <result column="c_clientname" property="cClientname"/>
             <result column="c_password" property="cPassword"/>
+            <result column="c_phonenum" property="cPhonenum"/>
         </association>
 
         <association property="medicine" javaType="com.mcyy.entity.Medicine">

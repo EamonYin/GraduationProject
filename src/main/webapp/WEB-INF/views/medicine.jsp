@@ -146,7 +146,13 @@
 				<td><span class="price">${list.mPrice}</span> 元</td>
 				<td><fmt:formatDate value="${list.mPastdate}" pattern="yyyy-MM-dd"/></td>
 				<td>${list.mInventory}</td>
-				<td><span class="label label-success radius">${list.mState}</span></td>
+				<td>
+				    <%--多条件改变span颜色--%>
+					<span class="label label-success radius"
+						  style="background-color: ${list.mState == '正常' ? 'green' : (list.mState == '临期' ? 'blue' : (list.mState == '库存过低' ? 'orange' : (list.mState == '过期' ? 'red' : 'black')))}"><%--(list.mState == '临期' ? blue : (list.mState == '库存过低' ? orange : (list.mState == '过期' ? red : black)))--%>
+							${list.mState}
+					</span>
+				</td>
 				<td class="td-status"><div  style="overflow-y: scroll;height: 40px">${list.mRemark}</div></td>
 				<td class="td-manage">
 					<input class="iis" style="display: none" value="${list.mMedicineid}"/>

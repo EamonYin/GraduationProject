@@ -1,5 +1,6 @@
 package com.mcyy.entity;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -312,63 +313,183 @@ public class StockExample {
             return (Criteria) this;
         }
 
-        public Criteria andSDataIsNull() {
-            addCriterion("s_data is null");
+        public Criteria andSPastdateIsNull() {
+            addCriterion("s_pastdate is null");
             return (Criteria) this;
         }
 
-        public Criteria andSDataIsNotNull() {
-            addCriterion("s_data is not null");
+        public Criteria andSPastdateIsNotNull() {
+            addCriterion("s_pastdate is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSDataEqualTo(Date value) {
-            addCriterionForJDBCDate("s_data =", value, "sData");
+        public Criteria andSPastdateEqualTo(Date value) {
+            addCriterionForJDBCDate("s_pastdate =", value, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataNotEqualTo(Date value) {
-            addCriterionForJDBCDate("s_data <>", value, "sData");
+        public Criteria andSPastdateNotEqualTo(Date value) {
+            addCriterionForJDBCDate("s_pastdate <>", value, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataGreaterThan(Date value) {
-            addCriterionForJDBCDate("s_data >", value, "sData");
+        public Criteria andSPastdateGreaterThan(Date value) {
+            addCriterionForJDBCDate("s_pastdate >", value, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("s_data >=", value, "sData");
+        public Criteria andSPastdateGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("s_pastdate >=", value, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataLessThan(Date value) {
-            addCriterionForJDBCDate("s_data <", value, "sData");
+        public Criteria andSPastdateLessThan(Date value) {
+            addCriterionForJDBCDate("s_pastdate <", value, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("s_data <=", value, "sData");
+        public Criteria andSPastdateLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("s_pastdate <=", value, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataIn(List<Date> values) {
-            addCriterionForJDBCDate("s_data in", values, "sData");
+        public Criteria andSPastdateIn(List<Date> values) {
+            addCriterionForJDBCDate("s_pastdate in", values, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataNotIn(List<Date> values) {
-            addCriterionForJDBCDate("s_data not in", values, "sData");
+        public Criteria andSPastdateNotIn(List<Date> values) {
+            addCriterionForJDBCDate("s_pastdate not in", values, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("s_data between", value1, value2, "sData");
+        public Criteria andSPastdateBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("s_pastdate between", value1, value2, "sPastdate");
             return (Criteria) this;
         }
 
-        public Criteria andSDataNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("s_data not between", value1, value2, "sData");
+        public Criteria andSPastdateNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("s_pastdate not between", value1, value2, "sPastdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceIsNull() {
+            addCriterion("s_price is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceIsNotNull() {
+            addCriterion("s_price is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceEqualTo(BigDecimal value) {
+            addCriterion("s_price =", value, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceNotEqualTo(BigDecimal value) {
+            addCriterion("s_price <>", value, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceGreaterThan(BigDecimal value) {
+            addCriterion("s_price >", value, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("s_price >=", value, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceLessThan(BigDecimal value) {
+            addCriterion("s_price <", value, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("s_price <=", value, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceIn(List<BigDecimal> values) {
+            addCriterion("s_price in", values, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceNotIn(List<BigDecimal> values) {
+            addCriterion("s_price not in", values, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("s_price between", value1, value2, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("s_price not between", value1, value2, "sPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayIsNull() {
+            addCriterion("s_today is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayIsNotNull() {
+            addCriterion("s_today is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayEqualTo(Date value) {
+            addCriterionForJDBCDate("s_today =", value, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayNotEqualTo(Date value) {
+            addCriterionForJDBCDate("s_today <>", value, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayGreaterThan(Date value) {
+            addCriterionForJDBCDate("s_today >", value, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("s_today >=", value, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayLessThan(Date value) {
+            addCriterionForJDBCDate("s_today <", value, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("s_today <=", value, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayIn(List<Date> values) {
+            addCriterionForJDBCDate("s_today in", values, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayNotIn(List<Date> values) {
+            addCriterionForJDBCDate("s_today not in", values, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("s_today between", value1, value2, "sToday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSTodayNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("s_today not between", value1, value2, "sToday");
             return (Criteria) this;
         }
     }

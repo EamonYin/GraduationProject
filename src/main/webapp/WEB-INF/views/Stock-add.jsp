@@ -42,57 +42,44 @@
     <div action="" method="post" class="form form-horizontal" id="form-article-add">
 
         <%--0315老版本，选择指定用户，不能创建新用户--%>
-        <%--<div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">选择用户：</label>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">选择进货药品：</label>
             <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="unames" class="select" id="changeuser" >
-					<option value="all">选择用户</option>
-                <c:forEach items="${users}" var="users">
-                    <option id="select" value="${users.uId}">${users.uUsername}</option>
+				<select name="stockdrug" class="select" id="changestockdrug">
+					<option value="all">选择药品</option>
+                <c:forEach items="${StockDrugs}" var="StockDrugs">
+                    <option id="select" value="${StockDrugs.mId}"
+                            onchange="selectdrug(${StockDrugs.mId})">${StockDrugs.mName}</option>
                 </c:forEach>
 				</select>
-				</span></div>
-        </div>--%>
-
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">购买者姓名：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="" id="cname" placeholder="" value="" class="input-text" style="width:90%">
+				</span>
             </div>
         </div>
 
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">购买者手机号：</label>
+            <label class="form-label col-xs-4 col-sm-2">处理方式：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="" id="cphone" placeholder="" value="" class="input-text" style="width:90%">
-            </div>
-        </div>
-
-
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">选择药品：</label>
-            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select value="切换药品" id="changemedicine" class="select">
-                <option value="all">选择药品</option>
-                <c:forEach items="${medicines}" var="medicines">
-                    <option id="select" value="${medicines.mMedicineid}">${medicines.mName}</option>
-                </c:forEach>
-				</select>
-				</span></div>
-        </div>
-
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">购买数量：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="" id="count" placeholder="" value="" class="input-text" style="width:90%">
-                件
+                <a class="input-text" style="color: red ;width: 100%" id="Approach" ></a>
             </div>
         </div>
 
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">销售时间：</label>
+            <label class="form-label col-xs-4 col-sm-2">进货数量：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" autocomplete="off" id="date" placeholder="请输入日期" class="input-text Wdate"
+                <input type="text" name="" id="stockcount" placeholder="" value="" class="input-text" style="width:90%">
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">药品价格：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="" id="stockprice" placeholder="" value="" class="input-text" style="width:90%">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">过期时间：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" autocomplete="off" id="pastdate" placeholder="请输入日期" class="input-text Wdate"
                        style="width:180px;" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
             </div>
         </div>
@@ -127,32 +114,45 @@
 <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 
+    //获取选中药品id,返回药品解决方案
+    $("#changestockdrug").on("change", function () {
+        var now = $("option:selected", this).val();
+        $.ajax({
+            type: "POST",
+            dataType: "text",
+            async: false,
+            data: {
+                'Drug_id': now
+            },
+            url: "${pageContext.request.contextPath}/OptionDrugState",
+            success: function (data) {
+                $("#Approach").html(data)
+            }
+        });
+    });
+
     function sub() {
-        <%--0315老版本，选择指定用户，不能创建新用户--%>
-        // var changeuser = $("#changeuser option:selected").val();
 
-        var cname = $("#cname").val();
-        var cphone = $("#cphone").val();
-        var changemedicine = $("#changemedicine option:selected").val();//获取选中的项
-        var date = $("#date").val();
-        var count = $("#count").val();
+        var changestockdrug = $("#changestockdrug option:selected").val();//药品id
+        var stockcount = $("#stockcount").val();//进货数量
+        var stockprice = $("#stockprice").val();//药品价格
+        var pastdate = $("#pastdate").val();
 
-        alert(cname+cphone);
+        // alert("药品"+changestockdrug + stockcount + stockprice + pastdate);
 
-        //layui关闭弹出层
+       //layui关闭弹出层
         var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
         $.ajax({
             type: "POST",
             dataType: "text",
             //async:false,//异步方式,直到服务器端返回数据后，触发$.ajax里的success方法
             data: {
-                'ClientName': cname,
-                'ClientPhone' : cphone,
-                'DrugName_id': changemedicine,
-                'Purchased': count,
-                'SalesTime': date,
+                'DrugID': changestockdrug,
+                'StockCount': stockcount,
+                'StockPrice': stockprice,
+                'PastDate': pastdate,
             },
-            url: "${pageContext.request.contextPath}/submitting_add",
+            url: "${pageContext.request.contextPath}/AddStock",
             success: function (data) {
                 parent.layer.close(index);
             },

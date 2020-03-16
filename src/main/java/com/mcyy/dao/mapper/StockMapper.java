@@ -2,8 +2,9 @@ package com.mcyy.dao.mapper;
 
 import com.mcyy.entity.Stock;
 import com.mcyy.entity.StockExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface StockMapper {
     long countByExample(StockExample example);

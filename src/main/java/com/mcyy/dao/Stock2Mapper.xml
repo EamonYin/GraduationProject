@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mcyy.dao.mapper.Stock2Mapper">
+  <resultMap id="BaseResultMap" type="com.mcyy.entity.Stock">
+    <id column="s_id" jdbcType="INTEGER" property="sId" />
+    <result column="s_medicineid" jdbcType="INTEGER" property="sMedicineid" />
+    <result column="s_count" jdbcType="INTEGER" property="sCount" />
+    <result column="s_pastdate" jdbcType="DATE" property="sPastdate" />
+    <result column="s_price" jdbcType="DECIMAL" property="sPrice" />
+    <result column="s_today" jdbcType="DATE" property="sToday" />
+
+    <association property="medicine" javaType="com.mcyy.entity.Medicine">
+      <id column="m_id" jdbcType="INTEGER" property="mId" />
+      <result column="m_medicineid" jdbcType="INTEGER" property="mMedicineid" />
+      <result column="m_name" jdbcType="VARCHAR" property="mName" />
+      <result column="m_state" jdbcType="VARCHAR" property="mState" />
+      <result column="m_price" jdbcType="DECIMAL" property="mPrice" />
+      <result column="m_inventory" jdbcType="INTEGER" property="mInventory" />
+      <result column="m_pastdate" jdbcType="DATE" property="mPastdate" />
+      <result column="m_classify" jdbcType="VARCHAR" property="mClassify" />
+      <result column="m_remark" jdbcType="VARCHAR" property="mRemark" />
+    </association>
+
+  </resultMap>
+
+  <select id="SelectAllStock" resultMap="BaseResultMap">
+    select * from stock s, medicine m where s_medicineid = m_medicineid
+  </select>
+
+</mapper>

@@ -5,7 +5,9 @@
     <id column="s_id" jdbcType="INTEGER" property="sId" />
     <result column="s_medicineid" jdbcType="INTEGER" property="sMedicineid" />
     <result column="s_count" jdbcType="INTEGER" property="sCount" />
-    <result column="s_data" jdbcType="DATE" property="sData" />
+    <result column="s_pastdate" jdbcType="DATE" property="sPastdate" />
+    <result column="s_price" jdbcType="DECIMAL" property="sPrice" />
+    <result column="s_today" jdbcType="DATE" property="sToday" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    s_id, s_medicineid, s_count, s_data
+    s_id, s_medicineid, s_count, s_pastdate, s_price, s_today
   </sql>
   <select id="selectByExample" parameterType="com.mcyy.entity.StockExample" resultMap="BaseResultMap">
     select
@@ -100,9 +102,11 @@
   </delete>
   <insert id="insert" parameterType="com.mcyy.entity.Stock">
     insert into stock (s_id, s_medicineid, s_count, 
-      s_data)
+      s_pastdate, s_price, s_today
+      )
     values (#{sId,jdbcType=INTEGER}, #{sMedicineid,jdbcType=INTEGER}, #{sCount,jdbcType=INTEGER}, 
-      #{sData,jdbcType=DATE})
+      #{sPastdate,jdbcType=DATE}, #{sPrice,jdbcType=DECIMAL}, #{sToday,jdbcType=DATE}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.mcyy.entity.Stock">
     insert into stock
@@ -116,8 +120,14 @@
       <if test="sCount != null">
         s_count,
       </if>
-      <if test="sData != null">
-        s_data,
+      <if test="sPastdate != null">
+        s_pastdate,
+      </if>
+      <if test="sPrice != null">
+        s_price,
+      </if>
+      <if test="sToday != null">
+        s_today,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -130,8 +140,14 @@
       <if test="sCount != null">
         #{sCount,jdbcType=INTEGER},
       </if>
-      <if test="sData != null">
-        #{sData,jdbcType=DATE},
+      <if test="sPastdate != null">
+        #{sPastdate,jdbcType=DATE},
+      </if>
+      <if test="sPrice != null">
+        #{sPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="sToday != null">
+        #{sToday,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -153,8 +169,14 @@
       <if test="record.sCount != null">
         s_count = #{record.sCount,jdbcType=INTEGER},
       </if>
-      <if test="record.sData != null">
-        s_data = #{record.sData,jdbcType=DATE},
+      <if test="record.sPastdate != null">
+        s_pastdate = #{record.sPastdate,jdbcType=DATE},
+      </if>
+      <if test="record.sPrice != null">
+        s_price = #{record.sPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sToday != null">
+        s_today = #{record.sToday,jdbcType=DATE},
       </if>
     </set>
     <if test="_parameter != null">
@@ -166,7 +188,9 @@
     set s_id = #{record.sId,jdbcType=INTEGER},
       s_medicineid = #{record.sMedicineid,jdbcType=INTEGER},
       s_count = #{record.sCount,jdbcType=INTEGER},
-      s_data = #{record.sData,jdbcType=DATE}
+      s_pastdate = #{record.sPastdate,jdbcType=DATE},
+      s_price = #{record.sPrice,jdbcType=DECIMAL},
+      s_today = #{record.sToday,jdbcType=DATE}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -180,8 +204,14 @@
       <if test="sCount != null">
         s_count = #{sCount,jdbcType=INTEGER},
       </if>
-      <if test="sData != null">
-        s_data = #{sData,jdbcType=DATE},
+      <if test="sPastdate != null">
+        s_pastdate = #{sPastdate,jdbcType=DATE},
+      </if>
+      <if test="sPrice != null">
+        s_price = #{sPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="sToday != null">
+        s_today = #{sToday,jdbcType=DATE},
       </if>
     </set>
     where s_id = #{sId,jdbcType=INTEGER}
@@ -190,7 +220,9 @@
     update stock
     set s_medicineid = #{sMedicineid,jdbcType=INTEGER},
       s_count = #{sCount,jdbcType=INTEGER},
-      s_data = #{sData,jdbcType=DATE}
+      s_pastdate = #{sPastdate,jdbcType=DATE},
+      s_price = #{sPrice,jdbcType=DECIMAL},
+      s_today = #{sToday,jdbcType=DATE}
     where s_id = #{sId,jdbcType=INTEGER}
   </update>
 </mapper>

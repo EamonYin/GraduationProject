@@ -371,6 +371,66 @@ public class ReturnsExample {
             addCriterionForJDBCDate("r_date not between", value1, value2, "rDate");
             return (Criteria) this;
         }
+
+        public Criteria andRPasttimeIsNull() {
+            addCriterion("r_pasttime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeIsNotNull() {
+            addCriterion("r_pasttime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeEqualTo(Date value) {
+            addCriterionForJDBCDate("r_pasttime =", value, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeNotEqualTo(Date value) {
+            addCriterionForJDBCDate("r_pasttime <>", value, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeGreaterThan(Date value) {
+            addCriterionForJDBCDate("r_pasttime >", value, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("r_pasttime >=", value, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeLessThan(Date value) {
+            addCriterionForJDBCDate("r_pasttime <", value, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("r_pasttime <=", value, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeIn(List<Date> values) {
+            addCriterionForJDBCDate("r_pasttime in", values, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeNotIn(List<Date> values) {
+            addCriterionForJDBCDate("r_pasttime not in", values, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("r_pasttime between", value1, value2, "rPasttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRPasttimeNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("r_pasttime not between", value1, value2, "rPasttime");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -333,62 +333,52 @@ public class OnsaleExample {
             return (Criteria) this;
         }
 
-        public Criteria andOCountEqualTo(String value) {
+        public Criteria andOCountEqualTo(Integer value) {
             addCriterion("o_count =", value, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountNotEqualTo(String value) {
+        public Criteria andOCountNotEqualTo(Integer value) {
             addCriterion("o_count <>", value, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountGreaterThan(String value) {
+        public Criteria andOCountGreaterThan(Integer value) {
             addCriterion("o_count >", value, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountGreaterThanOrEqualTo(String value) {
+        public Criteria andOCountGreaterThanOrEqualTo(Integer value) {
             addCriterion("o_count >=", value, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountLessThan(String value) {
+        public Criteria andOCountLessThan(Integer value) {
             addCriterion("o_count <", value, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountLessThanOrEqualTo(String value) {
+        public Criteria andOCountLessThanOrEqualTo(Integer value) {
             addCriterion("o_count <=", value, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountLike(String value) {
-            addCriterion("o_count like", value, "oCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOCountNotLike(String value) {
-            addCriterion("o_count not like", value, "oCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOCountIn(List<String> values) {
+        public Criteria andOCountIn(List<Integer> values) {
             addCriterion("o_count in", values, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountNotIn(List<String> values) {
+        public Criteria andOCountNotIn(List<Integer> values) {
             addCriterion("o_count not in", values, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountBetween(String value1, String value2) {
+        public Criteria andOCountBetween(Integer value1, Integer value2) {
             addCriterion("o_count between", value1, value2, "oCount");
             return (Criteria) this;
         }
 
-        public Criteria andOCountNotBetween(String value1, String value2) {
+        public Criteria andOCountNotBetween(Integer value1, Integer value2) {
             addCriterion("o_count not between", value1, value2, "oCount");
             return (Criteria) this;
         }

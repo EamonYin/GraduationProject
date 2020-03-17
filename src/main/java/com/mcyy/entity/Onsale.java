@@ -10,7 +10,7 @@ public class Onsale {
 
     private BigDecimal oPrice;
 
-    private String oCount;
+    private Integer oCount;
 
     private String oState;
 
@@ -42,12 +42,12 @@ public class Onsale {
         this.oPrice = oPrice;
     }
 
-    public String getoCount() {
+    public Integer getoCount() {
         return oCount;
     }
 
-    public void setoCount(String oCount) {
-        this.oCount = oCount == null ? null : oCount.trim();
+    public void setoCount(Integer oCount) {
+        this.oCount = oCount;
     }
 
     public String getoState() {
@@ -72,18 +72,5 @@ public class Onsale {
 
     public void setoClassify(String oClassify) {
         this.oClassify = oClassify == null ? null : oClassify.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "Onsale{" +
-                "oId=" + oId +
-                ", oName='" + oName + '\'' +
-                ", oPrice=" + oPrice +
-                ", oCount='" + oCount + '\'' +
-                ", oState='" + oState + '\'' +
-                ", oPastdate=" + oPastdate +
-                ", oClassify='" + oClassify + '\'' +
-                '}';
     }
 }

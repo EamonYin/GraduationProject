@@ -7,35 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f3279a-044e-479d-b5be-c6f9ceda6c07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/controller/StockController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/OnsaleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/ReturnsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/Stock2Mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/OnsaleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/ReturnsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/Stock2Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Onsale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/OnsaleExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Returns.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/ReturnsExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/service/StockService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/StockServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Stock-add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Stock.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/controller/OnSaleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/controller/ReturnsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/service/OnSaleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/service/ReturnService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/OnSaleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/ReturnServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/StockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/StockMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/StockMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/StockMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/OnSale.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Stock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/StockExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/StockExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/salemessage-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/salemessage-add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcyy/dao/StockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcyy/dao/StockMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcyy/entity/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcyy/entity/Stock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcyy/entity/StockExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/OnsaleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/OnsaleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/ReturnsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/ReturnsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/OnsaleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/OnsaleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/ReturnsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/ReturnsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Onsale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Onsale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/OnsaleExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/OnsaleExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Returns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/Returns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/ReturnsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcyy/entity/ReturnsExample.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,130 +38,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/controller/ReturnsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/ReturnService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Stock.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/ReturnServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="73" column="58" selection-start-line="73" selection-start-column="58" selection-end-line="73" selection-end-column="58" />
-              <folding>
-                <element signature="e#1830#2198#0#JSP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/Stock2Mapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="11" column="30" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/Stock2Mapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="26" column="71" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Medicine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/MedicineMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="12" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/StockService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/controller/StockController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="38" column="36" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/StockServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1222#1223#0" expanded="true" />
-                <element signature="e#1249#1250#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Stock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="19" column="20" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="20" />
-              <folding>
-                <element signature="e#758#759#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#823#824#0" expanded="true" />
-                <element signature="e#853#854#0" expanded="true" />
-                <element signature="e#892#893#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
-                <element signature="e#981#982#0" expanded="true" />
-                <element signature="e#1027#1028#0" expanded="true" />
-                <element signature="e#1061#1062#0" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1135#1136#0" expanded="true" />
-                <element signature="e#1171#1172#0" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1237#1238#0" expanded="true" />
-                <element signature="e#1285#1286#0" expanded="true" />
-                <element signature="e#1327#1328#0" expanded="true" />
-                <element signature="e#1364#1365#0" expanded="true" />
-                <element signature="e#1393#1394#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1477#1478#0" expanded="true" />
-                <element signature="e#1508#1509#0" expanded="true" />
-                <element signature="e#1537#1538#0" expanded="true" />
-                <element signature="e#1579#1580#0" expanded="true" />
-                <element signature="e#1615#1616#0" expanded="true" />
-                <element signature="e#1652#1653#0" expanded="true" />
-                <element signature="e#1683#1684#0" expanded="true" />
-                <element signature="e#1733#1734#0" expanded="true" />
-                <element signature="e#1773#1774#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="168">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -187,8 +74,8 @@
         <option value="Tag Library Descriptor" />
         <option value="Enum" />
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -205,7 +92,6 @@
       <find>paging</find>
       <find>aria-label</find>
       <find>sorting_disabled</find>
-      <find>insertSelective</find>
       <find>mName</find>
       <find>example</find>
       <find>上一页</find>
@@ -224,6 +110,7 @@
       <find>添加销售</find>
       <find>decimal</find>
       <find>criteria</find>
+      <find>insertSelective</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -233,19 +120,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="0316-addOnSale+returns" />
+        <entry key="$PROJECT_DIR$" value="0316-StockOver" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/DayChart.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/controller/ExcelController2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/service/ExcelService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/ExcelServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/controller/ExcelController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/salemessage-add.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcyy/service/Medicine.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcyy/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/salemessage.jsp" />
@@ -289,8 +170,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/Stock2Mapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcyy/dao/Stock2Mapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/StockServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/controller/StockController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Stock.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/service/OnSaleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/OnSaleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/controller/OnSaleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/OnsaleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/controller/StockController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/ReturnsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcyy/controller/ReturnsController.java" />
       </list>
     </option>
   </component>
@@ -317,8 +204,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -326,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -477,6 +363,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -492,8 +379,11 @@
     <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.mcyy.test" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Graduation-Project\src\main\webapp\WEB-INF\views" />
+      <recent name="D:\Graduation-Project\src\main\webapp\static" />
+      <recent name="D:\Graduation-Project\src\main\webapp" />
+      <recent name="D:\Graduation-Project\src\main\webapp\static\echarts" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Graduation-Project\src\main\java\com\mcyy\dao" />
@@ -509,11 +399,8 @@
       <recent name="com.mcyy.service.impl" />
       <recent name="com.mcyy.entity" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Graduation-Project\src\main\webapp\WEB-INF\views" />
-      <recent name="D:\Graduation-Project\src\main\webapp\static" />
-      <recent name="D:\Graduation-Project\src\main\webapp" />
-      <recent name="D:\Graduation-Project\src\main\webapp\static\echarts" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mcyy.test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -752,7 +639,8 @@
       <workItem from="1584202765150" duration="309000" />
       <workItem from="1584247706264" duration="9642000" />
       <workItem from="1584266190952" duration="9712000" />
-      <workItem from="1584324266597" duration="24394000" />
+      <workItem from="1584324266597" duration="25102000" />
+      <workItem from="1584411263395" duration="3380000" />
     </task>
     <task id="LOCAL-00001" summary="添加取消按钮，调整保存按钮前端逻辑">
       <created>1583847170695</created>
@@ -796,11 +684,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584340152313</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="完成进货业务">
+      <created>1584368639936</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584368639936</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286921000" />
+    <option name="totallyTimeSpent" value="291009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -812,8 +707,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1551" height="839" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1552" height="840" extended-state="0" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -821,7 +715,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.27863362" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2824632" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.3286119" />
@@ -834,7 +728,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.07648725" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" x="-17" y="654" width="1021" height="217" id="Run" order="11" sideWeight="0.49932975" visible="true" weight="0.3847242" />
+      <window_info anchor="bottom" x="-17" y="654" width="1021" height="217" id="Run" order="11" sideWeight="0.49932975" visible="true" weight="0.25706214" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.35410765" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -898,7 +792,8 @@
     <MESSAGE value="添加用户权限，超管可以改管理员密码权限，用户表独立出来（client）" />
     <MESSAGE value="添加用户权限，用户表独立出来（client）,超级管理员可以显示账户管理栏目，销售记录遇到没有的client，创建新client" />
     <MESSAGE value="添加退货表，促销表及其业务" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加退货表，促销表及其业务" />
+    <MESSAGE value="完成进货业务" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成进货业务" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -925,73 +820,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3108" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/ExcelMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1008" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/SaleMessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/SaleMessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/ExcelMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Excel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/SalesmessageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -1139,32 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/ReturnsExample.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Returns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/ReturnsMapper.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/ReturnsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Onsale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1367">
-          <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1277,60 +1079,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Stock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Stock.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="20" />
+        <state relative-caret-position="301">
+          <caret line="73" column="58" selection-start-line="73" selection-start-column="58" selection-end-line="73" selection-end-column="58" />
           <folding>
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#892#893#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1135#1136#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1508#1509#0" expanded="true" />
-            <element signature="e#1537#1538#0" expanded="true" />
-            <element signature="e#1579#1580#0" expanded="true" />
-            <element signature="e#1615#1616#0" expanded="true" />
-            <element signature="e#1652#1653#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#1733#1734#0" expanded="true" />
-            <element signature="e#1773#1774#0" expanded="true" />
+            <element signature="e#1830#2198#0#JSP" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Medicine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/MedicineMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="12" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/Stock2Mapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="252">
           <caret line="11" column="30" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1340,26 +1101,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/Stock2Mapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
+        <state relative-caret-position="728">
           <caret line="26" column="71" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Medicine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/MedicineMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="12" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/StockServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
+        <state relative-caret-position="980">
           <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/controller/OnSaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/OnSaleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/OnSaleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/OnsaleExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Onsale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/OnsaleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/OnsaleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="111" column="29" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/StockService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="504">
           <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1369,21 +1199,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/controller/StockController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="36" />
+        <state relative-caret-position="2884">
+          <caret line="103" column="52" selection-start-line="103" selection-start-column="52" selection-end-line="103" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Stock.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/ReturnsExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/entity/Returns.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="73" column="58" selection-start-line="73" selection-start-column="58" selection-end-line="73" selection-end-column="58" />
-          <folding>
-            <element signature="e#1830#2198#0#JSP" />
-          </folding>
+        <state relative-caret-position="220">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/mapper/ReturnsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/dao/ReturnsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/controller/ReturnsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/ReturnService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcyy/service/impl/ReturnServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
     </entry>

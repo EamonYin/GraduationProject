@@ -11,6 +11,8 @@ public class Returns {
 
     private Date rDate;
 
+    private Date rPasttime;
+
     public Integer getrId() {
         return rId;
     }
@@ -43,13 +45,11 @@ public class Returns {
         this.rDate = rDate;
     }
 
-    @Override
-    public String toString() {
-        return "Returns{" +
-                "rId=" + rId +
-                ", rMedicineid=" + rMedicineid +
-                ", rCount=" + rCount +
-                ", rDate=" + rDate +
-                '}';
+    public Date getrPasttime() {
+        return rPasttime;
+    }
+
+    public void setrPasttime(Date rPasttime) {
+        this.rPasttime = rPasttime;
     }
 }

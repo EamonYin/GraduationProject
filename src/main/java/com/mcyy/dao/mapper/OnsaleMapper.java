@@ -2,8 +2,9 @@ package com.mcyy.dao.mapper;
 
 import com.mcyy.entity.Onsale;
 import com.mcyy.entity.OnsaleExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface OnsaleMapper {
     long countByExample(OnsaleExample example);

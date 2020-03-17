@@ -5,7 +5,7 @@
     <id column="o_id" jdbcType="INTEGER" property="oId" />
     <result column="o_name" jdbcType="VARCHAR" property="oName" />
     <result column="o_price" jdbcType="DECIMAL" property="oPrice" />
-    <result column="o_count" jdbcType="VARCHAR" property="oCount" />
+    <result column="o_count" jdbcType="INTEGER" property="oCount" />
     <result column="o_state" jdbcType="VARCHAR" property="oState" />
     <result column="o_pastdate" jdbcType="DATE" property="oPastdate" />
     <result column="o_classify" jdbcType="VARCHAR" property="oClassify" />
@@ -106,7 +106,7 @@
       o_count, o_state, o_pastdate, 
       o_classify)
     values (#{oId,jdbcType=INTEGER}, #{oName,jdbcType=VARCHAR}, #{oPrice,jdbcType=DECIMAL}, 
-      #{oCount,jdbcType=VARCHAR}, #{oState,jdbcType=VARCHAR}, #{oPastdate,jdbcType=DATE}, 
+      #{oCount,jdbcType=INTEGER}, #{oState,jdbcType=VARCHAR}, #{oPastdate,jdbcType=DATE}, 
       #{oClassify,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mcyy.entity.Onsale">
@@ -145,7 +145,7 @@
         #{oPrice,jdbcType=DECIMAL},
       </if>
       <if test="oCount != null">
-        #{oCount,jdbcType=VARCHAR},
+        #{oCount,jdbcType=INTEGER},
       </if>
       <if test="oState != null">
         #{oState,jdbcType=VARCHAR},
@@ -177,7 +177,7 @@
         o_price = #{record.oPrice,jdbcType=DECIMAL},
       </if>
       <if test="record.oCount != null">
-        o_count = #{record.oCount,jdbcType=VARCHAR},
+        o_count = #{record.oCount,jdbcType=INTEGER},
       </if>
       <if test="record.oState != null">
         o_state = #{record.oState,jdbcType=VARCHAR},
@@ -198,7 +198,7 @@
     set o_id = #{record.oId,jdbcType=INTEGER},
       o_name = #{record.oName,jdbcType=VARCHAR},
       o_price = #{record.oPrice,jdbcType=DECIMAL},
-      o_count = #{record.oCount,jdbcType=VARCHAR},
+      o_count = #{record.oCount,jdbcType=INTEGER},
       o_state = #{record.oState,jdbcType=VARCHAR},
       o_pastdate = #{record.oPastdate,jdbcType=DATE},
       o_classify = #{record.oClassify,jdbcType=VARCHAR}
@@ -216,7 +216,7 @@
         o_price = #{oPrice,jdbcType=DECIMAL},
       </if>
       <if test="oCount != null">
-        o_count = #{oCount,jdbcType=VARCHAR},
+        o_count = #{oCount,jdbcType=INTEGER},
       </if>
       <if test="oState != null">
         o_state = #{oState,jdbcType=VARCHAR},
@@ -234,7 +234,7 @@
     update onsale
     set o_name = #{oName,jdbcType=VARCHAR},
       o_price = #{oPrice,jdbcType=DECIMAL},
-      o_count = #{oCount,jdbcType=VARCHAR},
+      o_count = #{oCount,jdbcType=INTEGER},
       o_state = #{oState,jdbcType=VARCHAR},
       o_pastdate = #{oPastdate,jdbcType=DATE},
       o_classify = #{oClassify,jdbcType=VARCHAR}

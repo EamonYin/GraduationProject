@@ -6,6 +6,7 @@
     <result column="r_medicineid" jdbcType="INTEGER" property="rMedicineid" />
     <result column="r_count" jdbcType="INTEGER" property="rCount" />
     <result column="r_date" jdbcType="DATE" property="rDate" />
+    <result column="r_pasttime" jdbcType="DATE" property="rPasttime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    r_id, r_medicineid, r_count, r_date
+    r_id, r_medicineid, r_count, r_date, r_pasttime
   </sql>
   <select id="selectByExample" parameterType="com.mcyy.entity.ReturnsExample" resultMap="BaseResultMap">
     select
@@ -100,9 +101,9 @@
   </delete>
   <insert id="insert" parameterType="com.mcyy.entity.Returns">
     insert into returns (r_id, r_medicineid, r_count, 
-      r_date)
+      r_date, r_pasttime)
     values (#{rId,jdbcType=INTEGER}, #{rMedicineid,jdbcType=INTEGER}, #{rCount,jdbcType=INTEGER}, 
-      #{rDate,jdbcType=DATE})
+      #{rDate,jdbcType=DATE}, #{rPasttime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.mcyy.entity.Returns">
     insert into returns
@@ -119,6 +120,9 @@
       <if test="rDate != null">
         r_date,
       </if>
+      <if test="rPasttime != null">
+        r_pasttime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="rId != null">
@@ -132,6 +136,9 @@
       </if>
       <if test="rDate != null">
         #{rDate,jdbcType=DATE},
+      </if>
+      <if test="rPasttime != null">
+        #{rPasttime,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -156,6 +163,9 @@
       <if test="record.rDate != null">
         r_date = #{record.rDate,jdbcType=DATE},
       </if>
+      <if test="record.rPasttime != null">
+        r_pasttime = #{record.rPasttime,jdbcType=DATE},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -166,7 +176,8 @@
     set r_id = #{record.rId,jdbcType=INTEGER},
       r_medicineid = #{record.rMedicineid,jdbcType=INTEGER},
       r_count = #{record.rCount,jdbcType=INTEGER},
-      r_date = #{record.rDate,jdbcType=DATE}
+      r_date = #{record.rDate,jdbcType=DATE},
+      r_pasttime = #{record.rPasttime,jdbcType=DATE}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -183,6 +194,9 @@
       <if test="rDate != null">
         r_date = #{rDate,jdbcType=DATE},
       </if>
+      <if test="rPasttime != null">
+        r_pasttime = #{rPasttime,jdbcType=DATE},
+      </if>
     </set>
     where r_id = #{rId,jdbcType=INTEGER}
   </update>
@@ -190,7 +204,8 @@
     update returns
     set r_medicineid = #{rMedicineid,jdbcType=INTEGER},
       r_count = #{rCount,jdbcType=INTEGER},
-      r_date = #{rDate,jdbcType=DATE}
+      r_date = #{rDate,jdbcType=DATE},
+      r_pasttime = #{rPasttime,jdbcType=DATE}
     where r_id = #{rId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -2,7 +2,9 @@ package com.mcyy.controller;
 
 import com.mcyy.entity.Medicine;
 import com.mcyy.entity.MedicineExample;
+import com.mcyy.entity.Onsale;
 import com.mcyy.entity.Stock;
+import com.mcyy.service.impl.OnSaleServiceImpl;
 import com.mcyy.service.impl.StockServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,8 @@ import java.util.List;
 public class StockController {
     @Autowired
     StockServiceImpl ssi;
+    @Autowired
+    OnSaleServiceImpl ossi;
 
     /**
      * 前往进货（Stock）页面
@@ -37,7 +41,6 @@ public class StockController {
         List<Stock> stocks = ssi.SelectAllStock();
         HttpSession session = request.getSession();
         session.setAttribute("Stocks",stocks);
-
 
         return "Stock";
     }
@@ -64,16 +67,17 @@ public class StockController {
      */
     @RequestMapping("/AddStock")
     public void AddStock(HttpServletResponse response ,HttpServletRequest request) throws IOException, ParseException {
+        //获取前端stock-add页面的传值
         String drugID = request.getParameter("DrugID");
         String stockCount = request.getParameter("StockCount");
         String stockPrice = request.getParameter("StockPrice");
         String pastDate = request.getParameter("PastDate");
         //获取前台选中药品状态（1.正常/2.过期/3.库存低/4.临期）
         int state = DrugState(response, Integer.parseInt(drugID));
-
+        //格式化过期时间
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = simpleDateFormat.parse(pastDate);
-
+        //创建当前药物的stock（进货表）对象
         Stock stock = new Stock();
         stock.setsCount(Integer.parseInt(stockCount));
         stock.setsMedicineid(Integer.parseInt(drugID));
@@ -83,6 +87,7 @@ public class StockController {
         Date date1 = new Date();
         stock.setsToday(date1);//上货时间
 
+        //创建当前药品的medicine表对象
         MedicineExample medicineExample = new MedicineExample();
         MedicineExample.Criteria criteria = medicineExample.createCriteria();
         criteria.andMIdEqualTo(Integer.parseInt(drugID));
@@ -96,13 +101,34 @@ public class StockController {
 
         System.out.println("hahaahhahahahahahah"+medicine+"+++"+medicineExample.toString());
 
+        //查询drugID对应的药品为了获取药品mname（药品名）classify（药品种类）插入onsale表
+        Medicine medicine1 = ssi.TheMedicine(Integer.parseInt(drugID));
+
+        //创建Onsale表（问题药品/促销药品表）对象
+        Onsale onsale = new Onsale();
+        onsale.setoName(medicine1.getmName());
+        onsale.setoPrice(StockPrice);
+        onsale.setoCount(inventory);
+        onsale.setoPastdate(date);
+        onsale.setoClassify(medicine1.getmClassify());
+
         //state =（1.正常/2.过期/3.库存低/4.临期）
         if(state == 2){
             ssi.UpdateTheMedicin(medicine,medicineExample);
+            onsale.setoState("过期");
+            ossi.InsertOnSale(onsale);
         }
-        else if(state == 3 || state == 4){
+        else if(state == 3){
             ssi.InsertDrugStock(stock);
             ssi.UpdateTheMedicin(medicine,medicineExample);
+            onsale.setoState("库存过低");
+            ossi.InsertOnSale(onsale);
+        }
+        else if(state == 4){
+            ssi.InsertDrugStock(stock);
+            ssi.UpdateTheMedicin(medicine,medicineExample);
+            onsale.setoState("临期");
+            ossi.InsertOnSale(onsale);
         }
         else{
             MedicineExample medicineExample1 = new MedicineExample();
@@ -145,7 +171,7 @@ public class StockController {
             Date date = new Date();
             int day = (int) ((date.getTime() - pastdate.getTime()) / (1000 * 3600 * 24));
             //判断药品状态
-            if(day > -15 && day < 0){
+            if(day >= -15 && day <= 0){
                 medicine.setmState("临期");
                 response.getWriter().print(medicinename+" 为“临期”药品，系统将其加入问题药品中处理");
                 return 4;

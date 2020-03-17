@@ -1,6 +1,9 @@
 package com.mcyy.service;
 
 import com.mcyy.entity.Onsale;
+import com.mcyy.entity.OnsaleExample;
+
+import java.util.List;
 
 /**
  * @Author XiaoMing
@@ -10,5 +13,7 @@ public interface OnSaleService {
 
     //插入OnSale表
     int InsertOnSale(Onsale record);
+    //查询Onsale表
+    List<Onsale> SelectAllOnSale(OnsaleExample example);
 
 }

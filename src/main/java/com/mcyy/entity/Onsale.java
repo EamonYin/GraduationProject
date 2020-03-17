@@ -18,6 +18,8 @@ public class Onsale {
 
     private String oClassify;
 
+    private String oOperator;
+
     public Integer getoId() {
         return oId;
     }
@@ -72,5 +74,13 @@ public class Onsale {
 
     public void setoClassify(String oClassify) {
         this.oClassify = oClassify == null ? null : oClassify.trim();
+    }
+
+    public String getoOperator() {
+        return oOperator;
+    }
+
+    public void setoOperator(String oOperator) {
+        this.oOperator = oOperator == null ? null : oOperator.trim();
     }
 }

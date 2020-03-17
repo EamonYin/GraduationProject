@@ -9,6 +9,7 @@
     <result column="o_state" jdbcType="VARCHAR" property="oState" />
     <result column="o_pastdate" jdbcType="DATE" property="oPastdate" />
     <result column="o_classify" jdbcType="VARCHAR" property="oClassify" />
+    <result column="o_operator" jdbcType="VARCHAR" property="oOperator" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    o_id, o_name, o_price, o_count, o_state, o_pastdate, o_classify
+    o_id, o_name, o_price, o_count, o_state, o_pastdate, o_classify, o_operator
   </sql>
   <select id="selectByExample" parameterType="com.mcyy.entity.OnsaleExample" resultMap="BaseResultMap">
     select
@@ -104,10 +105,10 @@
   <insert id="insert" parameterType="com.mcyy.entity.Onsale">
     insert into onsale (o_id, o_name, o_price, 
       o_count, o_state, o_pastdate, 
-      o_classify)
+      o_classify, o_operator)
     values (#{oId,jdbcType=INTEGER}, #{oName,jdbcType=VARCHAR}, #{oPrice,jdbcType=DECIMAL}, 
       #{oCount,jdbcType=INTEGER}, #{oState,jdbcType=VARCHAR}, #{oPastdate,jdbcType=DATE}, 
-      #{oClassify,jdbcType=VARCHAR})
+      #{oClassify,jdbcType=VARCHAR}, #{oOperator,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mcyy.entity.Onsale">
     insert into onsale
@@ -133,6 +134,9 @@
       <if test="oClassify != null">
         o_classify,
       </if>
+      <if test="oOperator != null">
+        o_operator,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="oId != null">
@@ -155,6 +159,9 @@
       </if>
       <if test="oClassify != null">
         #{oClassify,jdbcType=VARCHAR},
+      </if>
+      <if test="oOperator != null">
+        #{oOperator,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -188,6 +195,9 @@
       <if test="record.oClassify != null">
         o_classify = #{record.oClassify,jdbcType=VARCHAR},
       </if>
+      <if test="record.oOperator != null">
+        o_operator = #{record.oOperator,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -201,7 +211,8 @@
       o_count = #{record.oCount,jdbcType=INTEGER},
       o_state = #{record.oState,jdbcType=VARCHAR},
       o_pastdate = #{record.oPastdate,jdbcType=DATE},
-      o_classify = #{record.oClassify,jdbcType=VARCHAR}
+      o_classify = #{record.oClassify,jdbcType=VARCHAR},
+      o_operator = #{record.oOperator,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -227,6 +238,9 @@
       <if test="oClassify != null">
         o_classify = #{oClassify,jdbcType=VARCHAR},
       </if>
+      <if test="oOperator != null">
+        o_operator = #{oOperator,jdbcType=VARCHAR},
+      </if>
     </set>
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
@@ -237,7 +251,8 @@
       o_count = #{oCount,jdbcType=INTEGER},
       o_state = #{oState,jdbcType=VARCHAR},
       o_pastdate = #{oPastdate,jdbcType=DATE},
-      o_classify = #{oClassify,jdbcType=VARCHAR}
+      o_classify = #{oClassify,jdbcType=VARCHAR},
+      o_operator = #{oOperator,jdbcType=VARCHAR}
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
 </mapper>

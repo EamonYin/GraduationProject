@@ -78,6 +78,7 @@
 			<dd>
 				<ul>
 					<li><a data-href="medicine" data-title="药品信息" href="javascript:void(0)">药品信息</a></li>
+					<li><a data-href="/GoOnsalePage" data-title="问题药品信息" href="javascript:void(0)">问题药品信息</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -94,7 +95,7 @@
 			<dt><i class="Hui-iconfont">&#xe620;</i>退货信息管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="saled" data-title="退货记录查询" href="javascript:void(0)">退货记录查询</a></li>
+					<li><a data-href="/GoReturnsPage" data-title="退货记录查询" href="javascript:void(0)">退货记录查询</a></li>
 					<%--<li><a data-href="product-category" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
 					<li><a data-href="product-list.html" data-title="产品管理" href="javascript:void(0)">产品管理</a></li>--%>
 			</ul>

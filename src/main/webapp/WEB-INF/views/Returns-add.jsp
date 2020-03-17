@@ -41,15 +41,14 @@
 <div class="page-container">
     <div action="" method="post" class="form form-horizontal" id="form-article-add">
 
-        <%--0315老版本，选择指定用户，不能创建新用户--%>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">选择进货药品：</label>
+            <label class="form-label col-xs-4 col-sm-2">选择退货药品：</label>
             <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="stockdrug" class="select" id="changestockdrug">
+				<select name="stockdrug" class="select" id="changereturnsdrug">
 					<option value="all">选择药品</option>
-                <c:forEach items="${StockDrugs}" var="StockDrugs">
-                    <option id="select" value="${StockDrugs.mId}"
-                            onchange="selectdrug(${StockDrugs.mId})">${StockDrugs.mName}</option>
+                <c:forEach items="${ReturnsDrugs}" var="ReturnsDrug">
+                    <option id="select" value="${ReturnsDrug.mId}"
+                            >${ReturnsDrug.mName}</option>
                 </c:forEach>
 				</select>
 				</span>
@@ -57,35 +56,28 @@
         </div>
 
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">处理方式：</label>
+            <label class="form-label col-xs-4 col-sm-2">退货数量：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <a class="input-text" style="color: red ;width: 100%" id="Approach" ></a>
-            </div>
-        </div>
-
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">进货数量：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="" id="stockcount" placeholder="" value="" class="input-text" style="width:90%">
+                <input type="text" name="" id="returnscount" placeholder="" value="" class="input-text" style="width:90%">
             </div>
         </div>
 
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">药品价格：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="" id="stockprice" placeholder="" value="" class="input-text" style="width:90%">
+                <input type="text" name="" id="returnsprice" placeholder="" value="" class="input-text" style="width:90%">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">过期时间：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" autocomplete="off" id="pastdate" placeholder="请输入日期" class="input-text Wdate"
+                <input type="text" autocomplete="off" id="returnspastdate" placeholder="请输入日期" class="input-text Wdate"
                        style="width:180px;" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
             </div>
         </div>
 
-            <%--获取当前操作员用户名--%>
-            <a id="operator" style="display: none">${user.uUsername}</a>
+        <%--获取当前操作员用户名--%>
+        <a id="operator" style="visibility: hidden">${user.uUsername}</a>
 
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
@@ -118,30 +110,14 @@
 <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 
-    //获取选中药品id,返回药品解决方案
-    $("#changestockdrug").on("change", function () {
-        var now = $("option:selected", this).val();
-        $.ajax({
-            type: "POST",
-            dataType: "text",
-            async: false,
-            data: {
-                'Drug_id': now
-            },
-            url: "${pageContext.request.contextPath}/OptionDrugState",
-            success: function (data) {
-                $("#Approach").html(data)
-            }
-        });
-    });
-
     function sub() {
 
-        var changestockdrug = $("#changestockdrug option:selected").val();//药品id
-        var stockcount = $("#stockcount").val();//进货数量
-        var stockprice = $("#stockprice").val();//药品价格
-        var pastdate = $("#pastdate").val();
-        var operator = $("#operator").text();
+        var changereturnsdrug = $("#changereturnsdrug option:selected").val();//退货药品id
+        var returnscount = $("#returnscount").val();//退货数量
+        var returnsprice = $("#returnsprice").val();//退货价格
+        var returnspastdate = $("#returnspastdate").val();//退货药品过期时间
+        let operator = $("#operator").text();//记录当前操作员
+        // alert(operator);
 
         // alert("药品"+changestockdrug + stockcount + stockprice + pastdate);
 
@@ -152,13 +128,13 @@
             dataType: "text",
             //async:false,//异步方式,直到服务器端返回数据后，触发$.ajax里的success方法
             data: {
-                'DrugID': changestockdrug,
-                'StockCount': stockcount,
-                'StockPrice': stockprice,
-                'PastDate': pastdate,
+                'ReturnsDrugID': changereturnsdrug,
+                'ReturnsCount': returnscount,
+                'ReturnsPrice': returnsprice,
+                'ReturnsPastDate': returnspastdate,
                 'Operator' : operator,
             },
-            url: "${pageContext.request.contextPath}/AddStock",
+            url: "${pageContext.request.contextPath}/ReturnsAdd",
             success: function (data) {
                 parent.layer.close(index);
             },

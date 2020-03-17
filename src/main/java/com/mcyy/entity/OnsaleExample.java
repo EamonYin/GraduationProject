@@ -582,6 +582,76 @@ public class OnsaleExample {
             addCriterion("o_classify not between", value1, value2, "oClassify");
             return (Criteria) this;
         }
+
+        public Criteria andOOperatorIsNull() {
+            addCriterion("o_operator is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorIsNotNull() {
+            addCriterion("o_operator is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorEqualTo(String value) {
+            addCriterion("o_operator =", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorNotEqualTo(String value) {
+            addCriterion("o_operator <>", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorGreaterThan(String value) {
+            addCriterion("o_operator >", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorGreaterThanOrEqualTo(String value) {
+            addCriterion("o_operator >=", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorLessThan(String value) {
+            addCriterion("o_operator <", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorLessThanOrEqualTo(String value) {
+            addCriterion("o_operator <=", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorLike(String value) {
+            addCriterion("o_operator like", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorNotLike(String value) {
+            addCriterion("o_operator not like", value, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorIn(List<String> values) {
+            addCriterion("o_operator in", values, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorNotIn(List<String> values) {
+            addCriterion("o_operator not in", values, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorBetween(String value1, String value2) {
+            addCriterion("o_operator between", value1, value2, "oOperator");
+            return (Criteria) this;
+        }
+
+        public Criteria andOOperatorNotBetween(String value1, String value2) {
+            addCriterion("o_operator not between", value1, value2, "oOperator");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

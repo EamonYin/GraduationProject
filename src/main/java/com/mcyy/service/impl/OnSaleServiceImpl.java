@@ -2,9 +2,12 @@ package com.mcyy.service.impl;
 
 import com.mcyy.dao.mapper.OnsaleMapper;
 import com.mcyy.entity.Onsale;
+import com.mcyy.entity.OnsaleExample;
 import com.mcyy.service.OnSaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Author XiaoMing
@@ -19,5 +22,10 @@ public class OnSaleServiceImpl implements OnSaleService {
     @Override
     public int InsertOnSale(Onsale record) {
         return onsaleMapper.insertSelective(record);
+    }
+
+    @Override
+    public List<Onsale> SelectAllOnSale(OnsaleExample example) {
+        return onsaleMapper.selectByExample(example);
     }
 }

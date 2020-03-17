@@ -72,6 +72,7 @@ public class StockController {
         String stockCount = request.getParameter("StockCount");
         String stockPrice = request.getParameter("StockPrice");
         String pastDate = request.getParameter("PastDate");
+        String operator = request.getParameter("Operator");//记录当前操作员
         //获取前台选中药品状态（1.正常/2.过期/3.库存低/4.临期）
         int state = DrugState(response, Integer.parseInt(drugID));
         //格式化过期时间
@@ -87,11 +88,12 @@ public class StockController {
         Date date1 = new Date();
         stock.setsToday(date1);//上货时间
 
-        //创建当前药品的medicine表对象
+
+        //传入下面UpdateTheMedicine方法中所需的药品对象
         MedicineExample medicineExample = new MedicineExample();
         MedicineExample.Criteria criteria = medicineExample.createCriteria();
         criteria.andMIdEqualTo(Integer.parseInt(drugID));
-
+        //创建当前药品的medicine表对象
         Medicine medicine = new Medicine();
         medicine.setmPastdate(date);
         int inventory = Integer.parseInt(stockCount);
@@ -101,16 +103,17 @@ public class StockController {
 
         System.out.println("hahaahhahahahahahah"+medicine+"+++"+medicineExample.toString());
 
-        //查询drugID对应的药品为了获取药品mname（药品名）classify（药品种类）插入onsale表
+        //查询drugID对应的药品为了获取medicin表中的旧信息插入onsale表
         Medicine medicine1 = ssi.TheMedicine(Integer.parseInt(drugID));
 
         //创建Onsale表（问题药品/促销药品表）对象
         Onsale onsale = new Onsale();
         onsale.setoName(medicine1.getmName());
         onsale.setoPrice(StockPrice);
-        onsale.setoCount(inventory);
-        onsale.setoPastdate(date);
+        onsale.setoCount(medicine1.getmInventory());
+        onsale.setoPastdate(medicine1.getmPastdate());
         onsale.setoClassify(medicine1.getmClassify());
+        onsale.setoOperator(operator);//将当前操作员存入OnSale表
 
         //state =（1.正常/2.过期/3.库存低/4.临期）
         if(state == 2){

@@ -25,7 +25,7 @@
 <title>药品管理</title><link rel="stylesheet" href="${pageContext.request.contextPath}/lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
 	<style>
 		.updata1{
-			width: 500px;
+			width: 50%;
 			height: 500px;
 			z-index: 10;
 			position: fixed;
@@ -35,7 +35,7 @@
 			display:none;
 		}
 		.updata2{
-			width: 500px;
+			width: 50%;
 			height: auto;
 			z-index: 10;
 			position: fixed;
@@ -176,7 +176,7 @@
 <div class="updata1" id="remark">
 	<form method="get" action="addRemark" class="basic-grey">
 		<label>
-			<p style="text-align: center">最近记录</p><br>
+			<p style="text-align: center ; width: auto">最近记录</p><br>
 			<textarea id="mRemark"  name="mRemark" style="font-size: 15px;height: 350px;width: 100%;overflow: hidden" ></textarea>
 		</label>
         <label style="text-align: center">
@@ -190,19 +190,19 @@
 <div class="updata2" id="mainContent">
 	<form method="get" action="updateMedicine" class="basic-grey">
 		<label>
-			<span>药品编号：</span>
+			<span style="width: auto">药品编号：</span>
 			<input id="mMedicineid" type="text" name="mMedicineid"  placeholder="${asc.mMedicineid}"/>
 		</label>
 		<label>
-			<span>药品名称：</span>
+			<span style="width: auto">药品名称：</span>
 			<input  id="mName" type="text" name="mName"  placeholder="${asc.mName}"/>
 		</label>
 		<label>
-			<span>药品种类：</span>
+			<span style="width: auto">药品种类：</span>
 			<input  id="mClassify" type="text" name="mClassify" placeholder="${asc.mClassify}"/>
 		</label>
 		<label>
-			<span>药品价格：</span>
+			<span style="width: auto">药品价格：</span>
 			<input id="mPrice" type="text" name="mPrice"  placeholder="${asc.mPrice}"/>
 		</label>
 

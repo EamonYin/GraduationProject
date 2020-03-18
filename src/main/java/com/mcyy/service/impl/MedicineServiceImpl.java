@@ -43,4 +43,9 @@ public class MedicineServiceImpl implements MedicineService {
         return medicineMapper.deleteByExample(example);
     }
 
+    @Override
+    public Medicine SelectMedicineByName(String MedicineName) {
+        return medicineMapper.SelectMedicineByName(MedicineName);
+    }
+
 }

@@ -22,4 +22,8 @@ public interface MedicineService {
 
     //删除药品
     int deleteMedicine(MedicineExample example);
+
+    //通过OnSale表中的药品名查找Medicine表中对应的药
+    Medicine SelectMedicineByName(String MedicineName);
+
 }

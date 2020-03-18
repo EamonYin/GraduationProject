@@ -35,7 +35,7 @@
 			display:none;
 		}
 		.updata2{
-			width: 500px;
+			width: 50%;
 			height: auto;
 			z-index: 10;
 			position: fixed;
@@ -156,12 +156,9 @@
 				<td>${OnSale.oOperator}</td>
 
 				<td class="td-manage">
-					<input class="iis" style="display: none" value="${OnSale.oId}"/>
-<%--					<a style="text-decoration:none" class="ml-5" onclick="add(this)" href="javascript:;" title="添加记录"><i class="Hui-iconfont">&#xe600;</i></a>--%>
-<%--					<input class="iis" style="display: none" value="${list.mRemark}"/>--%>
-					<a style="text-decoration:none" class="ml-5" onClick="Edit(${OnSale.oId})" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
-<%--					<input class="iis" style="display: none" value="${list.mMedicineid}"/>--%>
-					<a  style="text-decoration:none" class="ml-5" onClick="acc(this)" href="javascript:;"  title="删除">
+					<a style="text-decoration:none" class="ml-5" onClick="Edit(this)" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<input class="iis" id="OnSale_oId" style="display: none" value="${OnSale.oId}"/>
+					<a  style="text-decoration:none" class="ml-5" onClick="DeleteIt(this)" href="javascript:;"  title="删除">
 						<i class="Hui-iconfont">&#xe6e2;</i>
 					</a>
 				</td>
@@ -173,45 +170,38 @@
 	</div>
 </div>
 
-<%--添加记录--%>
-<%--<div class="updata1" id="remark">
-	<form method="get" action="addRemark" class="basic-grey">
-		<label>
-			<p style="text-align: center">最近记录</p><br>
-			<textarea id="mRemark"  name="mRemark" style="font-size: 15px;height: 350px;width: 100%;overflow: hidden" ></textarea>
-		</label>
-        <label style="text-align: center">
-		    <button id="ok" type="submit" value="添加" class="button">添加</button>
-			<input class="iis" style="display: none" id="r1" name="r1" />
-		    <button id="no" type="button" value="取消" class="button" onclick="bbc()">取消</button>
-        </label>
-	</form>
-</div>--%>
 <%--编辑药品信息--%>
 <div class="updata2" id="EditMsg">
-	<form method="get" action="updateMedicine" class="basic-grey">
+	<div method="get" action="updateMedicine" class="basic-grey">
 		<label>
-			<span>药品编号：</span>
-			<input id="mMedicineid" type="text" name="mMedicineid"  placeholder="${asc.mMedicineid}"/>
+			<span style="width: auto">药品名称：</span>
+			<input id="oName" type="text" name="Drug_Name" disabled="disabled" placeholder="${TheOnSale.oName}"/>
+		</label>
+
+		<label>
+			<span style="width: auto">药品价格：</span>
+			<input id="oPrice" type="text" name="Drug_Price" disabled="disabled" placeholder="${TheOnSale.oPrice}"/>
 		</label>
 		<label>
-			<span>药品名称：</span>
-			<input  id="mName" type="text" name="mName"  placeholder="${asc.mName}"/>
+			<span style="width: auto">药品售出：</span>
+			<input  id="oCount" type="text" name="Drug_Sale" placeholder="${TheOnSale.oCount}"/>件
 		</label>
 		<label>
-			<span>药品种类：</span>
-			<input  id="mClassify" type="text" name="mClassify" placeholder="${asc.mClassify}"/>
+			<span style="width: auto">药品类型：</span>
+			<input id="oClassify" type="text" name="Drug_Classify" disabled="disabled" placeholder="${TheOnSale.oClassify}"/>
 		</label>
+
 		<label>
-			<span>药品价格：</span>
-			<input id="mPrice" type="text" name="mPrice"  placeholder="${asc.mPrice}"/>
+			<p style="text-align: center ; width: auto">最近记录</p><br>
+			<textarea id="mRemark"  name="mRemark" style="font-size: 15px;height: 50px;width: 100%;overflow: hidden" ></textarea>
 		</label>
 
         <label style="text-align: center">
-		    <button id="xiu" type="submit" value="修改" class="button">修改</button>
+			<input id="oId" style="display: none"  value="${TheOnSale.oId}" />
+		    <button id="xiu" type="submit" value="修改" class="button" onclick="UpDate(this)">修改</button>
 		    <button id="onn" type="button" value="取消" class="button" onclick="Cancel()">取消</button>
         </label>
-	</form>
+	</div>
 </div>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery/1.9.1/jquery.min.js"></script>
@@ -222,75 +212,74 @@
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="${pageContext.request.contextPath}/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 
 	//显示 修改问题药品信息 弹窗
-	function Edit(e) {
-		$("#EditMsg").css("display","block");
-		// alert(e)
+	function Edit(obj) {
+
+		var OnSaleDrugId = obj.nextElementSibling.value;
+
+		$.ajax({
+			type : "POST",
+			dataType : "JSON",
+			data : {'OnSaleDrugId' : OnSaleDrugId},
+			url: "${pageContext.request.contextPath}/ShowOnSaleMsg",
+			success :function (TheOnSale) {
+				$("#EditMsg").css("display","block");
+				for (var key in TheOnSale)
+				{
+					if(key=="oName"){
+						$("#oName").attr("value",TheOnSale[key]);
+					}else if(key=="oPrice"){
+						$("#oPrice").attr("value",TheOnSale[key]);
+					}else if(key=="oCount"){
+						$("#oCount").attr("value",TheOnSale[key]);
+					}else if(key=="oClassify"){
+						$("#oClassify").attr("value",TheOnSale[key]);
+					}else if(key=="oId"){
+						$("#oId").attr("value",TheOnSale[key]);
+					}
+				}
+			}
+
+	});
 	}
+
+	//提交 修改问题药品信息
+	function UpDate(obj) {
+		var OnSaleId = obj.previousElementSibling.value;
+		var OnSaleCount = $("#oCount").val();
+		var mRemark = $("#mRemark").val();
+		var oName = $("#oName").val();
+
+		$.ajax({
+			type : "POST",
+			dataType : "text",
+			data : {
+				'OnSaleId' : OnSaleId,
+				'OnSaleCount' : OnSaleCount,
+				'mRemark' : mRemark,
+				'oName' : oName,
+			},
+			url: "${pageContext.request.contextPath}/UpDateOnSale",
+
+		});
+		$("#EditMsg").css("display","none");
+
+	}
+
 	//取消 修改问题药品信息 弹窗
 	function Cancel() {
 		$("#EditMsg").css("display","none");
 	}
 
-	//添加记录
-	function bbc() {
-		$("#remark").css("display","none");
-	}
-	function add(obj) {
-		var id=obj.previousElementSibling.value;
-		var re=obj.nextElementSibling.value;
-		$("#remark").css("display","block");
-		$("#r1").val(id)
-		$("#mRemark").val(re);
-	}
-
-
-	//修改药品信息
-	function bac() {
-		$("#mainContent").css("display","none");
-	}
-	function abb(obj) {
-		var mmid=obj.nextElementSibling.value;
-		$.ajax({
-			url:"${pageContext.request.contextPath}/selectMedicine?mmid="+mmid,
-			type:"GET",
-			dataType:"json",
-			success:function(asc) {
-				$("#mainContent").css("display","block");
-				for (var key in asc)
-				{
-					if(key=="mMedicineid"){
-						$("#mMedicineid").attr("value",asc[key]);
-					}else if(key=="mName"){
-						$("#mName").attr("value",asc[key]);
-					}else if(key=="mClassify"){
-						$("#mClassify").attr("value",asc[key]);
-					}else if(key=="mPrice"){
-						$("#mPrice").attr("value",asc[key]);
-					}
-				}
-			}
-		})
-	}
-	//删除该药品
-	function acc(obj) {
-		var mMedicineid=obj.previousElementSibling.value;
+	//删除选中药品
+	function DeleteIt(obj) {
+		var OnSaleId = obj.previousElementSibling.value;
 		flag = window.confirm("确定要删除该信息？");
 		if(flag==false){ return false }
-		window.location="${pageContext.request.contextPath}/deleteMedicine?mMedicineid="+mMedicineid;
-
+		window.location.href = "${pageContext.request.contextPath}/DeleteIt?OnSaleId="+OnSaleId;
 	}
-
-	//搜索药品
-/*	function ac() {
-		var mn=$("#ssk").val();
-		window.location="${pageContext.request.contextPath}/selectM?mn="+mn;
-
-	}*/
-
 
 	$('.table-sort').dataTable({
 		"aaSorting": [[ 0, "desc" ]],//默认第几个排序
@@ -299,62 +288,8 @@
 			{"orderable":false,"aTargets":[1,2,6,7]}// 制定列不参与排序
 		]
 	});
-	/*/!*产品-添加*!/
-	function product_add(title,url){
-		var index = layer.open({
-			type: 2,
-			title: title,
-			content: url
-		});
-		layer.full(index);
-	}
-	/!*产品-查看*!/
-	function product_show(title,url,id){
-		var index = layer.open({
-			type: 2,
-			title: title,
-			content: url
-		});
-		layer.full(index);
-	}
 
-	/!*产品-下架*!/
-	function product_stop(obj,id){
-		layer.confirm('确认要下架吗？',function(index){
-			$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-			$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-			$(obj).remove();
-			layer.msg('已下架!',{icon: 5,time:1000});
-		});
-	}
-
-	/!*产品-编辑*!/
-	function product_edit(title,url,id){
-		var index = layer.open({
-			type: 2,
-			title: title,
-			content: url
-		});
-		layer.full(index);
-	}
-
-	/!*产品-删除*!/
-	function product_del(obj,id){
-		layer.confirm('确认要删除吗？',function(index){
-			$.ajax({
-				type: 'POST',
-				url: '',
-				dataType: 'json',
-				success: function(data){
-					$(obj).parents("tr").remove();
-					layer.msg('已删除!',{icon:1,time:1000});
-				},
-				error:function(data) {
-					console.log(data.msg);
-				},
-			});
-		});
-	}*/
-</script> 
+</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/lib/laypage/1.2/laypage.js"></script>
 </body>
 </html>

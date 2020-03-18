@@ -88,7 +88,6 @@ public class StockController {
         Date date1 = new Date();
         stock.setsToday(date1);//上货时间
 
-
         //传入下面UpdateTheMedicine方法中所需的药品对象
         MedicineExample medicineExample = new MedicineExample();
         MedicineExample.Criteria criteria = medicineExample.createCriteria();
@@ -117,21 +116,21 @@ public class StockController {
 
         //state =（1.正常/2.过期/3.库存低/4.临期）
         if(state == 2){
+            ossi.InsertOnSale(onsale);
             ssi.UpdateTheMedicin(medicine,medicineExample);
             onsale.setoState("过期");
-            ossi.InsertOnSale(onsale);
         }
         else if(state == 3){
             ssi.InsertDrugStock(stock);
+            ossi.InsertOnSale(onsale);
             ssi.UpdateTheMedicin(medicine,medicineExample);
             onsale.setoState("库存过低");
-            ossi.InsertOnSale(onsale);
         }
         else if(state == 4){
             ssi.InsertDrugStock(stock);
+            ossi.InsertOnSale(onsale);
             ssi.UpdateTheMedicin(medicine,medicineExample);
             onsale.setoState("临期");
-            ossi.InsertOnSale(onsale);
         }
         else{
             MedicineExample medicineExample1 = new MedicineExample();

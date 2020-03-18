@@ -279,4 +279,9 @@
     select * from medicine where m_name = #{m_name} and m_price = #{m_price} and m_inventory = #{m_inventory} and m_pastdate =#{m_pastdate} and m_classify = #{m_classify};
   </select>
 
+  <!--根据OnSale表中的oName查询Medicine表中的对象-->
+  <select id="SelectMedicineByName" resultMap="BaseResultMap">
+    SELECT * FROM medicine m where m.m_name = #{MedicineName}
+  </select>
+
 </mapper>

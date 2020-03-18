@@ -154,7 +154,7 @@
 			<dt><i class="Hui-iconfont">&#xe62e;</i> 账户管理 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="system-base.html" data-title="系统设置" href="javascript:void(0)">工作人员权限分配</a></li>
+					<li><a data-href="/GoEditAdmin" data-title="系统设置" href="javascript:void(0)">工作人员权限分配</a></li>
 					<li><a data-href="system-category.html" data-title="栏目管理" href="javascript:void(0)">顾客账号管理</a></li>
 					<%--<li><a data-href="system-data.html" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
 					<li><a data-href="system-shielding.html" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>

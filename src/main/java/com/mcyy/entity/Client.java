@@ -6,7 +6,7 @@ package com.mcyy.entity;
  */
 public class Client {
 
-    private int cId;
+    private Integer cId;
     private String cClientname;
     private String cPassword;
     private String cPhonenum;

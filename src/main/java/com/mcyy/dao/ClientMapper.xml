@@ -7,8 +7,11 @@
         <result column="c_clientname" jdbcType="VARCHAR" property="cClientname"/>
         <result column="c_password" jdbcType="VARCHAR" property="cPassword"/>
         <result column="c_phonenum" jdbcType="VARCHAR" property="cPhonenum"/>
-
     </resultMap>
+
+    <select id="SelectAllClient" resultMap="ClientPOJO">
+        SELECT * FROM `client`
+    </select>
 
     <select id="SelectTheClient" resultMap="ClientPOJO">
         select * from client where c_clientname = #{cClientname} and c_phonenum = #{cPhonenum}
@@ -17,5 +20,9 @@
     <insert id="InsertTheClient" useGeneratedKeys="true" keyProperty="cId" parameterType="com.mcyy.entity.Client">
         insert into client (c_clientname,c_password,c_phonenum) VALUES (#{cClientname} , #{cPassword} , #{cPhonenum})
     </insert>
+
+    <select id="SelectClientById" resultMap="ClientPOJO">
+        SELECT * FROM `client` where c_id =#{cId}
+    </select>
 
 </mapper>

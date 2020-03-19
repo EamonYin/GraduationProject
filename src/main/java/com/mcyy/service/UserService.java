@@ -10,5 +10,7 @@ public interface UserService {
     List<User> SelectUser(UserExample userExample);
     //插入用户
     int InsertUser(User user);
+    //插入任意字段用户
+    int AddUser(User user);
 
 }

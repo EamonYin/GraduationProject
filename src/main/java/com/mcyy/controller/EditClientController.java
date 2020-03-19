@@ -86,5 +86,31 @@ public class EditClientController {
         csi.DeleteClientById(Integer.parseInt(uId));
         return "redirect:/GoClientPage";
     }
+    /**
+     * Client-Add弹出层
+     * @return
+     */
+    @RequestMapping("/GoClientAddPage")
+    public String GoClientAddPage(){
+        return "Client-Add";
+    }
+    /**
+     * 添加Client业务,(注意！！！ClientMapper.xml)
+     * @param request
+     * @return
+     */
+    @RequestMapping("/AddClient")
+    public String AddClient(HttpServletRequest request){
+        String cClientname = request.getParameter("cClientname");
+        String cPassword = request.getParameter("cPassword");
+        String cPhonenum = request.getParameter("cPhonenum");
+
+        Client client = new Client();
+        client.setcClientname(cClientname);
+        client.setcPhonenum(cPhonenum);
+        client.setcPassword(cPassword);
+        csi.InsertTheClient(client);
+        return "redirect:/GoClientPage";
+    }
 
 }

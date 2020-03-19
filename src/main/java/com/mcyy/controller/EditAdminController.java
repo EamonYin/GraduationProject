@@ -98,4 +98,33 @@ public class EditAdminController {
         easi.DeleteUserById(Integer.parseInt(uId));
         return  "redirect:/GoEditAdmin";
     }
+
+    /**
+     * Admin-Add弹出层
+     * @return
+     */
+    @RequestMapping("/GoAdminAddPage")
+    public String GoAdminAddPage(){
+        return "Admin-Add";
+    }
+
+    /**
+     * 添加User业务
+     * @param request
+     * @return
+     */
+    @RequestMapping("/AddAdmin")
+    public String AddAdmin(HttpServletRequest request){
+        String uUsername = request.getParameter("uUsername");
+        String uPassword = request.getParameter("uPassword");
+        String changeAdminLimit = request.getParameter("ChangeAdminLimit");
+
+        User user = new User();
+        user.setuUsername(uUsername);
+        user.setuPassword(uPassword);
+        user.setuLimit(Integer.parseInt(changeAdminLimit));
+        usi.AddUser(user);
+        return "redirect:/GoEditAdmin";
+    }
+
 }

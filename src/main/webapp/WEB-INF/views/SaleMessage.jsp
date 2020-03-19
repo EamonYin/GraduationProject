@@ -50,7 +50,8 @@
 	<a <%--href="${pageContext.request.contextPath}/addsalemessage"--%>
             href="javascript:;" onclick="admin_role_add('添加销售记录','${pageContext.request.contextPath}/addsalemessage','800')"
             class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加销售记录 </a>
-	</span></div>
+	</span>
+    </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>

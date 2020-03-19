@@ -1,7 +1,6 @@
 package com.mcyy.service;
 
 import com.mcyy.entity.Client;
-import com.mcyy.entity.ClientExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -20,6 +19,8 @@ public interface ClientService {
     //根据Id查询对应的Client
     Client SelectClientById(int cId);
     //更新指定Client信息
-    int UpDateClientById(Client record,ClientExample example);
+    int UpDateClientById(Client record,Integer cId);
+    //根据id删除用户
+    int DeleteClientById(Integer id);
 
 }

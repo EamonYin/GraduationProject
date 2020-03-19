@@ -244,7 +244,7 @@
 		var uId = obj.previousElementSibling.value;
 		flag = window.confirm("确定要删除该信息？");
 		if(flag==false){ return false }
-		window.location.href = "${pageContext.request.contextPath}/DeleteAdmin?uId="+uId;
+		window.location.href = "${pageContext.request.contextPath}/DeleteClient?uId="+uId;
 	}
 
 </script>

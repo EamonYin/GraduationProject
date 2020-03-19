@@ -2,7 +2,6 @@ package com.mcyy.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.mcyy.entity.Client;
-import com.mcyy.entity.ClientExample;
 import com.mcyy.service.impl.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,6 +54,11 @@ public class EditClientController {
         pw.flush();
         pw.close();
     }
+
+    /**
+     * 更改修改后的Client信息
+     * @param request
+     */
     @RequestMapping("/UpDateClient")
     public void UpDateClient(HttpServletRequest request){
         //获取前台传来的数据
@@ -68,11 +72,19 @@ public class EditClientController {
         client.setcClientname(cClientname);
         client.setcPassword(cPassword);
         client.setcPhonenum(cPhonenum);
-        ClientExample clientExample = new ClientExample();
-        ClientExample.Criteria criteria = clientExample.createCriteria();
-        criteria.andCIdEqualTo(Integer.parseInt(cId));
-        csi.UpDateClientById(client,clientExample);
+        csi.UpDateClientById(client,Integer.parseInt(cId));
     }
 
+    /**
+     * 删除指定 id Client
+     * @param uId
+     * @return
+     */
+    @RequestMapping("/DeleteClient")
+    public String DeleteClient(String uId){
+        System.out.println("大萝卜"+uId);
+        csi.DeleteClientById(Integer.parseInt(uId));
+        return "redirect:/GoClientPage";
+    }
 
 }

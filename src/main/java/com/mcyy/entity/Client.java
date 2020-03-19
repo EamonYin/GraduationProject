@@ -11,7 +11,7 @@ public class Client {
     private String cPassword;
     private String cPhonenum;
 
-    public Client(int cId, String cClientname, String cPassword, String cPhonenum) {
+    public Client(Integer cId, String cClientname, String cPassword, String cPhonenum) {
         this.cId = cId;
         this.cClientname = cClientname;
         this.cPassword = cPassword;
@@ -21,11 +21,11 @@ public class Client {
     public Client() {
     }
 
-    public int getcId() {
+    public Integer getcId() {
         return cId;
     }
 
-    public void setcId(int cId) {
+    public void setcId(Integer cId) {
         this.cId = cId;
     }
 

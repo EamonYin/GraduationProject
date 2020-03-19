@@ -1,7 +1,6 @@
 package com.mcyy.dao.mapper;
 
 import com.mcyy.entity.Client;
-import com.mcyy.entity.ClientExample;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 
@@ -20,8 +19,10 @@ public interface ClientMapper {
     List<Client> SelectAllClient();
     //根据Id查询对应的Client
     Client SelectClientById(@Param("cId")int cId);
-
-    int updateByExampleSelective(@Param("record") Client record, @Param("example") ClientExample example);
+    //根据id更新用户信息
+    int UpDateClientById(@Param("record") Client record, @Param("cId")Integer cId);
+    //根据id删除用户
+    int DeleteClientById(Integer id);
 //    @Options(useGeneratedKeys = true,keyProperty = "c_id", keyColumn = "cId")
 //    int InsertTheClient(@Param("cname")String cname , @Param("cpassword")String cpassword , @Param("cphonenum")String cphonenum);
 }

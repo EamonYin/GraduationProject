@@ -25,4 +25,27 @@
         SELECT * FROM `client` where c_id =#{cId}
     </select>
 
+    <update id="UpDateClientById" parameterType="map">
+        update client
+        <set>
+            <if test="record.cId != null">
+                c_id = #{record.cId,jdbcType=INTEGER},
+            </if>
+            <if test="record.cClientname != null">
+                c_clientname = #{record.cClientname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.cPassword != null">
+                c_password = #{record.cPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="record.cPhonenum != null">
+                c_phonenum = #{record.cPhonenum,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE c_id = #{cId};
+    </update>
+
+    <delete id="DeleteClientById" parameterType="java.lang.Integer">
+        DELETE FROM client WHERE c_id = #{cId}
+    </delete>
+
 </mapper>

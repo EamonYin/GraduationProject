@@ -2,7 +2,6 @@ package com.mcyy.service.impl;
 
 import com.mcyy.dao.mapper.ClientMapper;
 import com.mcyy.entity.Client;
-import com.mcyy.entity.ClientExample;
 import com.mcyy.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +38,12 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public int UpDateClientById(Client record, ClientExample example) {
-        return clientMapper.updateByExampleSelective(record,example);
+    public int UpDateClientById(Client record, Integer cId) {
+        return clientMapper.UpDateClientById(record,cId);
+    }
+
+    @Override
+    public int DeleteClientById(Integer id) {
+        return clientMapper.DeleteClientById(id);
     }
 }

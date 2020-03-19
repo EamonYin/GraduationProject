@@ -39,8 +39,8 @@ $(function(){
 <body>
 <div class="page-container">
 	<p class="f-14">欢迎使用 <span class="f-20 text-success">名创药业</span> 管理系统！</p>
-	<p>当前登录用户：18 </p>
-	<p>登录IP：${Ip}  登录时间：${Date}</p>
+	<p>当前登录用户：${user.uUsername} </p>
+	<p>登录IP：${IP}  登录时间：${Date}</p>
 	
 	<div class="box" style="width:100%; " >
 		<div class="bcon">

@@ -44,8 +44,9 @@ public class LoginController {
         HttpSession session = request.getSession();
         session.setAttribute("Date",currSun);
         //获取本地IP
-        InetAddress LocalIp = Inet4Address.getLocalHost();
-        session.setAttribute("IP",LocalIp);
+        String address = InetAddress.getLocalHost().getHostAddress();
+        session.setAttribute("IP",address);
+        System.out.println("ip:"+address);
 
         //创建集合存多个ReMarkPoJo对象<唯一的药名对应多个药名下的信息>
         ArrayList<Object> objects = new ArrayList<>();

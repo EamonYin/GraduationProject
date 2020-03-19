@@ -177,7 +177,8 @@
 	<form method="get" action="addRemark" class="basic-grey">
 		<label>
 			<p style="text-align: center ; width: auto">最近记录</p><br>
-			<textarea id="mRemark"  name="mRemark" style="font-size: 15px;height: 350px;width: 100%;overflow: hidden" ></textarea>
+			<input id="mRemark" name="mRemark" style="display: none">
+			<textarea id="NewmRemark"  name="NewmRemark" style="font-size: 15px;height: 350px;width: 100%;overflow: hidden" ></textarea>
 		</label>
         <label style="text-align: center">
 		    <button id="ok" type="submit" value="添加" class="button">添加</button>
@@ -229,6 +230,8 @@
 	function bbc() {
 		$("#remark").css("display","none");
 	}
+
+	//最近记录
 	function add(obj) {
 		var id=obj.previousElementSibling.value;
 		var re=obj.nextElementSibling.value;
@@ -236,7 +239,6 @@
 		$("#r1").val(id)
 		$("#mRemark").val(re);
 	}
-
 
 	//修改药品信息
 	function bac() {

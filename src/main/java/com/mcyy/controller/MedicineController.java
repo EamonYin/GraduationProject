@@ -64,10 +64,11 @@ public class MedicineController {
     @RequestMapping("/addRemark")
     public String updatark(HttpServletRequest request){
         int id = Integer.parseInt(request.getParameter("r1"));
-        request.getParameter("mRemark");
+        String mRemark = request.getParameter("mRemark");
+        String newmRemark = request.getParameter("NewmRemark");
         Medicine medicine = new Medicine();
         MedicineExample medicineExample = new MedicineExample();
-        medicine.setmRemark(request.getParameter("mRemark"));
+        medicine.setmRemark(request.getParameter("mRemark")+";"+newmRemark);
         MedicineExample.Criteria criteria = medicineExample.createCriteria();
         criteria.andMMedicineidEqualTo(id);
         int i = medicineService.updaterk(medicine,medicineExample);

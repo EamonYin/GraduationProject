@@ -116,21 +116,21 @@ public class StockController {
 
         //state =（1.正常/2.过期/3.库存低/4.临期）
         if(state == 2){
+            onsale.setoState("过期");
             ossi.InsertOnSale(onsale);
             ssi.UpdateTheMedicin(medicine,medicineExample);
-            onsale.setoState("过期");
         }
         else if(state == 3){
+            onsale.setoState("库存过低");
             ssi.InsertDrugStock(stock);
             ossi.InsertOnSale(onsale);
             ssi.UpdateTheMedicin(medicine,medicineExample);
-            onsale.setoState("库存过低");
         }
         else if(state == 4){
+            onsale.setoState("临期");
             ssi.InsertDrugStock(stock);
             ossi.InsertOnSale(onsale);
             ssi.UpdateTheMedicin(medicine,medicineExample);
-            onsale.setoState("临期");
         }
         else{
             MedicineExample medicineExample1 = new MedicineExample();
@@ -173,7 +173,7 @@ public class StockController {
             Date date = new Date();
             int day = (int) ((date.getTime() - pastdate.getTime()) / (1000 * 3600 * 24));
             //判断药品状态
-            if(day >= -15 && day <= 0){
+            if(day >= -15 && day <= 0 && inventory > 10){
                 medicine.setmState("临期");
                 response.getWriter().print(medicinename+" 为“临期”药品，系统将其加入问题药品中处理");
                 return 4;
@@ -181,7 +181,7 @@ public class StockController {
                 medicine.setmState("过期");
                 response.getWriter().print(medicinename+" 为“过期”药品，系统将为您清空旧货并上新");
                 return 2;
-            }else if(day < 0 && inventory < 11) {
+            }else if(day <= 0 && inventory < 11) {
                 medicine.setmState("库存过低");
                 response.getWriter().print(medicinename+" 为“库存过低”药品，系统将其加入问题药品中处理");
                 return 3;

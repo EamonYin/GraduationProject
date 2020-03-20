@@ -42,11 +42,11 @@ public class MedicineController {
             System.out.println(list.get(i).getmName()+"  商品是否过期的时间判断  "+day);
             //库存
             int inv = list.get(i).getmInventory();
-            if(day >= -15 && day <= 0 ){
+            if(day >= -15 && day <= 0 && inv > 10){
                 list.get(i).setmState("临期");
-            }else if(day>0&&inv>10){
+            }else if(day > 0 && inv > 10){
                 list.get(i).setmState("过期");
-            }else if(day<0&&inv<11){
+            }else if( day <= 0 && inv < 11){
                 list.get(i).setmState("库存过低");
             }else{
                 list.get(i).setmState("正常");
@@ -157,11 +157,11 @@ public class MedicineController {
             int day = (int) ((date.getTime()-etime.getTime())/(1000*3600*24));
             //库存
             int inv = list.get(i).getmInventory();
-            if(day >=- 15 && day <= 0 ){
+            if(day >= -15 && day <= 0 && inv > 10){
                 list.get(i).setmState("临期");
             }else if(day>0&&inv>10){
                 list.get(i).setmState("过期");
-            }else if(day<0&&inv<11){
+            }else if(day <= 0 && inv < 11){
                 list.get(i).setmState("库存过低");
             }else{
                 list.get(i).setmState("正常");

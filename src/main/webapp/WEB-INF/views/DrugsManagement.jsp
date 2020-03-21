@@ -32,8 +32,9 @@
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 
-    <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a href="javascript:;" onclick="datadel()"
-                                                               class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a
+    <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
+        <%--<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>--%>
+        <a
             class="btn btn-primary radius" onclick="admin_role_add('添加新药品','${pageContext.request.contextPath}/GoDrugManageAdd','800')" href="javascript:;"><i
             class="Hui-iconfont">&#xe600;</i> 添加新药品</a></span> <span class="r">共有数据：<strong>${nums}</strong> 条</span></div>
     <div class="mt-20">

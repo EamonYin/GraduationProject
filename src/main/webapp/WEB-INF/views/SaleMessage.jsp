@@ -41,12 +41,12 @@
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
 	
-	<select value="切换用户" id="changeuser" onchange="haha()">
+	<%--<select value="切换用户" id="changeuser" onchange="haha()">
   <option value="all">全部</option>
         <c:forEach items="${Saleuname}" var="Saleuname">
   <option id="select" value="${Saleuname.user.uUsername}">${Saleuname.user.uUsername}</option>
         </c:forEach>
-    </select>
+    </select>--%>
 	<a <%--href="${pageContext.request.contextPath}/addsalemessage"--%>
             href="javascript:;" onclick="admin_role_add('添加销售记录','${pageContext.request.contextPath}/addsalemessage','800')"
             class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加销售记录 </a>

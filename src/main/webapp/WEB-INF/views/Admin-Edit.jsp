@@ -129,9 +129,9 @@
 	</div>--%>
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
-			<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius">
+			<%--<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius">
 				<i class="Hui-iconfont">&#xe6e2;</i> 批量删除
-			</a>
+			</a>--%>
 			<a href="javascript:;" onclick="admin_add('添加管理员','${pageContext.request.contextPath}/GoAdminAddPage','800','500')" class="btn btn-primary radius">
 				<i class="Hui-iconfont">&#xe600;</i> 添加管理员
 			</a>
@@ -158,7 +158,7 @@
 				<td>${EditUser.uId}</td>
 				<td>${EditUser.uUsername}</td>
 				<td>${EditUser.uPassword}</td>
-				<td>${EditUser.uLimit== 1 ? '超级管理员' : '管理员'}</td>
+				<td>${EditUser.uLimit== 1 ? '超级管理员' : (EditUser.uLimit == '2' ? '店长' : '销售专员')}</td>
 				<td class="td-manage">
 					<a title="编辑" href="javascript:;" onclick="admin_edit(this)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 					<input id="uId" style="display: none"  value="${EditUser.uId}" />
@@ -184,7 +184,8 @@
 			<%--<input  id="uLimit" type="text" name="uLimit" placeholder="${EditUser.mClassify}"/>--%>
 			<select value="切换职务" id="ChangeLimit" class="select">
 				<option id="select1" value="1">超级管理员</option>
-				<option id="select2" value="2">管理员</option>
+				<option id="select2" value="2">店长</option>
+				<option id="select3" value="3">销售专员</option>
 			</select>
 		</label>
 

@@ -48,7 +48,7 @@
 			<ul class="cl">
 				<li><%--超级管理员--%></li>
 				<li class="dropDown dropDown_hover">
-					<a href="#" class="dropDown_A" >${user.uLimit == '1' ?   '超级管理员' : '管理员'}<i class="Hui-iconfont">&#xe6d5;</i></a>
+					<a href="#" class="dropDown_A" >${user.uLimit == '1' ?   '超级管理员' : (user.uLimit == '2' ? '店长' : '销售专员')}<i class="Hui-iconfont">&#xe6d5;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
 <%--						<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>--%>
 <%--						<li><a href="#">切换账户</a></li>--%>
@@ -82,7 +82,7 @@
 			</ul>
 		</dd>
 	</dl>
-		<dl id="menu-picture">
+		<dl id="menu-picture" style="display: ${user.uLimit == '1' ? "" : (user.uLimit == '2' ? "" : "none")}">
 			<dt><i class="Hui-iconfont">&#xe613;</i> 药品管理模块 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
@@ -125,7 +125,7 @@
 			</ul>
 		</dd>
 	</dl>
-		<dl id="menu-admin">
+		<dl id="menu-admin" style="display: ${user.uLimit == '1' ? "" : (user.uLimit == '2' ? "" : "none")}">
 			<dt><i class="Hui-iconfont">&#xe62d;</i>进货信息管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
@@ -141,7 +141,7 @@
 			<dd>
 				<ul>
 					<li><a data-href="/charts/goday" data-title="日销售视图" href="javascript:void(0)">日销售视图</a></li>
-					<li><a data-href="/charts/gomonthly" data-title="月销售视图" href="javascript:void(0)">月销售视图</a></li>
+					<li style="display: ${user.uLimit == '1' ? "" :  "none"}"><a data-href="/charts/gomonthly" data-title="月销售视图" href="javascript:void(0)">月销售视图</a></li>
 <%--					<li><a data-href="charts-3.html" data-title="区域图" href="javascript:void(0)">区域图</a></li>--%>
 <%--					<li><a data-href="charts-4.html" data-title="柱状图" href="javascript:void(0)">柱状图</a></li>--%>
 <%--					<li><a data-href="charts-5.html" data-title="饼状图" href="javascript:void(0)">饼状图</a></li>--%>
@@ -150,12 +150,12 @@
 			</ul>
 		</dd>
 	</dl>
-		<dl id="menu-system" style="display: ${user.uLimit == '1' ? "" : "none"}">
+		<dl id="menu-system" style="display: ${user.uLimit == '1' ? "" : (user.uLimit == '2' ? "" : "none")}">
 			<dt><i class="Hui-iconfont">&#xe62e;</i> 账户管理 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="/GoEditAdmin" data-title="系统设置" href="javascript:void(0)">工作人员权限分配</a></li>
-					<li><a data-href="/GoClientPage" data-title="栏目管理" href="javascript:void(0)">顾客账号管理</a></li>
+					<li style="display: ${user.uLimit == '1' ? "" : "none"}"><a data-href="/GoEditAdmin" data-title="工作人员权限分配" href="javascript:void(0)">工作人员权限分配</a></li>
+					<li><a data-href="/GoClientPage" data-title="顾客账号管理" href="javascript:void(0)">顾客账号管理</a></li>
 					<%--<li><a data-href="system-data.html" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
 					<li><a data-href="system-shielding.html" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>
 					<li><a data-href="system-log.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>--%>

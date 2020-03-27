@@ -62,6 +62,7 @@
 				<select value="切换权限" id="ChangeAdminLimit" class="select">
                 <option value="1">超级管理员</option>
                 <option value="2">管理员</option>
+                <option value="3">销售员</option>
 				</select>
 				</span>
             </div>

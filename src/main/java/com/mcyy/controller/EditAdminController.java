@@ -37,6 +37,7 @@ public class EditAdminController {
         UserExample userExample = new UserExample();
         List<User> users = usi.SelectUser(userExample);
         HttpSession session = request.getSession();
+        session.setAttribute("EditUsersSize",users.size());
         session.setAttribute("EditUsers",users);
         return "Admin-Edit";
     }

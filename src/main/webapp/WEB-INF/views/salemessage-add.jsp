@@ -137,7 +137,7 @@
         var date = $("#date").val();
         var count = $("#count").val();
 
-        alert(cname+cphone);
+        // alert(cname+cphone);
 
         //layui关闭弹出层
         var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引

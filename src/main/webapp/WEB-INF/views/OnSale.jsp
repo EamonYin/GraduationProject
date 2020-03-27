@@ -114,13 +114,13 @@
 	</style>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 药品管理 <span class="c-gray en">&gt;</span> 药品信息管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 药品信息管理 <span class="c-gray en">&gt;</span> 问题药品信息 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<%--<div class="text-c">
 		<input type="text" name="" id="ssk" placeholder=" 药品名字" style="width:250px" class="input-text">
 		<button name="" id="sou" class="btn btn-success" onclick="ac()"><i class="Hui-iconfont">&#xe665;</i> 搜药品</button>
 	</div>--%>
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <%--<span class="l"> <a class="btn btn-primary radius" onclick="opon()" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加图书</a></span>--%> <span class="r">共有数据：<strong>${num}</strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <%--<span class="l"> <a class="btn btn-primary radius" onclick="opon()" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加图书</a></span>--%> <span class="r">共有数据：<strong>${OnSaleSize}</strong> 条</span> </div>
 	<div class="mt-20">
 		<table class="table table-border table-bordered table-bg table-hover table-sort">
 			<thead>

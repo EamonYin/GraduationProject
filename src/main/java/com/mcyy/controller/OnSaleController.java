@@ -41,6 +41,9 @@ public class OnSaleController {
         OnsaleExample onsaleExample = new OnsaleExample();
         List<Onsale> onsales = ossi.SelectAllOnSale(onsaleExample);
         HttpSession session = request.getSession();
+
+        session.setAttribute("OnSaleSize",onsales.size());
+
         session.setAttribute("OnSales",onsales);
 
         return "OnSale";

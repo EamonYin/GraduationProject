@@ -40,7 +40,7 @@
         var change = $("#changetime").val();
         //
         if(change === undefined ){
-            alert(change);
+            // alert(change);
             change = "2019-09-01"
         }
         // else {

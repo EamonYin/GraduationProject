@@ -32,6 +32,7 @@ public class EditClientController {
     public String GoClientPage(HttpServletRequest request){
         List<Client> clients = csi.SelectAllClient();
         HttpSession session = request.getSession();
+        session.setAttribute("ClientsSize",clients.size());
         session.setAttribute("Clients",clients);
         return "Client-Edit";
     }

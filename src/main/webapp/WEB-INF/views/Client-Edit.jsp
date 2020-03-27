@@ -24,7 +24,7 @@
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>管理员列表</title>
+<title>客户管理列表</title>
 
 	<style>
 		.updata1{
@@ -118,14 +118,14 @@
 
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 管理员管理 <span class="c-gray en">&gt;</span> 管理员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 账户管理 <span class="c-gray en">&gt;</span> 顾客列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
 			<%--<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>--%>
 			<a href="javascript:;" onclick="admin_add('添加用户','${pageContext.request.contextPath}/GoClientAddPage','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
-		</span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+		</span> <span class="r">共有数据：<strong>${ClientsSize}</strong> 条</span> </div>
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr>
@@ -225,7 +225,7 @@
       var cClientname = $("#cClientname").val();
       var cPassword = $("#cPassword").val();
 	  var cPhonenum = $("#cPhonenum").val();
-	  alert(cId);
+	  // alert(cId);
 		$.ajax({
 			type : "POST",
 			dataType : "text",

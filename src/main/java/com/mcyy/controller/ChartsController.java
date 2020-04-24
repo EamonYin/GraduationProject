@@ -72,7 +72,7 @@ public class ChartsController {
     public List<HashMap<Object, Object>> TestChartDay(HttpServletResponse response, String changetime) {
 
         if (changetime.equals("changetime") || changetime == "") {
-            changetime = "2019-09-01";
+            changetime = "2020-09-01";
         }
 
         String today = changetime;

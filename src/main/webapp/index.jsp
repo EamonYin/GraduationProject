@@ -138,8 +138,7 @@
                     <b>&nbsp;熟悉技术：</b>MySQL、Oracle数据库的操作、部署Linux服务器、Redis、Nginx。<br><br>
                     <b>&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</b>xiaominglovejava@163.com<br>
                 </li>
-                <li>
-
+                <li style="text-align:center">
                     <p style="margin-top: 25%">学习总结在CSDN上</p>
                     <a href="https://blog.csdn.net/Tianc666">点击移步到我的博客</a>
                 </li>

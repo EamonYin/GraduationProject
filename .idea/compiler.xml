@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Graduation-Project" />
+        <module name="GraduationProject" />
         <module name="mcyy" />
+        <module name="Graduation-Project" />
       </profile>
     </annotationProcessing>
   </component>

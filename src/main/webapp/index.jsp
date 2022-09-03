@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>登录</title>
+    <title>我的学习总结</title>
     <link rel="stylesheet" href="/static/login-ui/css/auth.css">
 
     <%--轮播效果--%>

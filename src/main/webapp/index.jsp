@@ -242,7 +242,11 @@
     right: 0px;
     bottom: 2%;
     margin: auto; width: 200px ; background-color: white">
-    <a href="http://beian.miit.gov.cn" name="津ICP备19009283号">津ICP备19009283号</a>
+    <!-- <a href="http://beian.miit.gov.cn" name="津ICP备19009283号">津ICP备19009283号</a> -->
+    <p>
+    <img src="static/lyimg/备案图标.png" width="26" height="30" alt="图片">
+    <a href=\"https://beian.mps.gov.cn/#/query/webSearch?code=12010302002444\" rel=\"noreferrer\" target=\"_blank\">津公网安备12010302002444</a>
+    </p>
 </div>
 <script src="static/indexjs/jquery-1.8.3.min.js"></script>
 <script src="static/Rotation/js/jquery.min.js"></script>

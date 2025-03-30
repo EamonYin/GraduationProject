@@ -145,7 +145,7 @@
                 <li style="text-align: left">
                     <p style="text-align: center"><b>在校项目：</b></p>
                     &nbsp;1.&nbsp;基于Spingboot+VUE的 学生信息 管理系统<br><br>
-                    &nbsp;2.&nbsp;<a href="http://www.xiaoming100.club/login">基于SSM技术的药房管理系统</a><br><br>
+                    &nbsp;2.&nbsp;<a href="/login">基于SSM技术的药房管理系统</a><br><br>
                     &nbsp;3.&nbsp;基于SSM的 咖啡商城+微信订阅号<br><br>
                     <p style="text-align: center"><b>实习内容：</b></p>
                     &nbsp;1.&nbsp;通过CAS单点登录，将现有项目对接到统一教育平台<br><br>
@@ -242,8 +242,8 @@
     right: 0px;
     bottom: 2%;
     margin: auto; width: 200px ; background-color: white">
-    <!-- <a href="http://beian.miit.gov.cn" name="津ICP备19009283号">津ICP备19009283号</a> -->
     <p>
+    <a href="http://beian.miit.gov.cn" name="津ICP备19009283号">津ICP备19009283号</a>
     <img src="static/lyimg/备案图标.png" width="26" height="30" alt="图片">
     <a href=\"https://beian.mps.gov.cn/#/query/webSearch?code=12010302002444\" rel=\"noreferrer\" target=\"_blank\">津公网安备12010302002444</a>
     </p>

@@ -19,9 +19,12 @@
         <property name="driverClassName" value="${driverClassName}"></property>
         <property name="url" value="${url}">
         </property>
-        <property name="username" value="${user}">
+        <!--2025-03-30 配置文件用户名密码无效，这里改成明文后续修改-->
+<!--        <property name="username" value="${user}">-->
+        <property name="username" value="eamon">
         </property>
-        <property name="password" value="${password}">
+<!--        <property name="password" value="${password}">-->
+        <property name="password" value="Tianc686Tianc">
         </property>
     </bean>
     <!--mapper映射-->

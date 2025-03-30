@@ -135,7 +135,8 @@
 </div>
 
 <script src="${pageContext.request.contextPath}/static/login-ui/js/auth.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script language="JavaScript">
 
     $(".login-btn").click(function () {

@@ -103,9 +103,27 @@
             padding: 10px;
         }
 
+        .tabbox .content .title {
+            font-size: 20px;
+        }
+        .tabbox .content .selfIntroduction{
+            margin-top:5px;
+            font-size: 13px;
+        }
+        .tabbox .content .learningSummary{
+            font-size: 20px;
+        }
+        .tabbox .content .projects{
+            font-size: 20px;
+        }
+
         .content ul {
             font-size: 20px;
         }
+
+         .number {
+                display: none !important;
+         }
 
     </style>
 </head>
@@ -124,32 +142,60 @@
             <a href="javascript:;">做过的项目</a>
         </div>
         <div class="content">
-            <ul>
 
+            <ul>
+                    <!-- 注释老版
+                    <p style="text-align: center">
+                        欢迎来到 小名同学 的空间<br>
+                        小名励志成为一名合格的 Java后端开发工程师！<br>
+                        一只 2020届 的仔~<br>
+                    </p>
+                    -->
                 <li style="text-align: left">
-                <p style="text-align: center">
-                    欢迎来到 小名同学 的空间<br>
-                    小名励志成为一名合格的 Java后端开发工程师！<br>
-                    一只 2020届 的仔~<br>
-                </p>
+
+                    <p style="text-align: center" class="title">
+                       欢迎进入EamonPlanet！<br>
+                       There's no such thing as can't.！<br>
+                    </p>
+
+                <!-- 注释老版
                     <b>&nbsp;掌握框架：</b>SSM、SpringBoot。<br><br>
                     <b>&nbsp;前端掌握：</b>JSP、JDBC、JSTL、jQuery、Javascript、Ajax、EL表达式等主流技术。<br><br>
                     <b>&nbsp;后端掌握：</b>JavaSE并熟练搭建 Java开发环境。<br><br>
                     <b>&nbsp;熟悉技术：</b>MySQL、Oracle数据库的操作、部署Linux服务器、Redis、Nginx。<br><br>
                     <b>&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</b>xiaominglovejava@163.com<br>
+                -->
+
+                 <p class="selfIntroduction">
+                <b>&nbsp;开发语言：</b>Java、Python。<br><br>
+                <b>&nbsp;掌握Web框架：</b>Spring Boot；Spring Cloud；SpringMVC、Spring、MyBatis；MyBatis-Plus，以及 Gradle、Maven
+                                     等项目构建工具。<br><br>
+                <b>&nbsp;掌握数据库：</b>MySQL、Oracle、MongoDB。<br><br>
+                <b>&nbsp;掌握中间件：</b>RabbitMQ、Redis。<br><br>
+                <b>&nbsp;前端熟悉：</b>Vue.js、AngularJS、JSP、JDBC、JSTL、jQuery、Javascript、Ajax、EL。<br><br>
+                <b>&nbsp;掌握其他：</b>Vue.js、AngularJS、JSP、JDBC、JSTL、jQuery、Javascript、Ajax、EL 表达式等主流技术。<br><br>
+                <b>&nbsp;深度学习框架：</b>Hugging Face Transformers、TensorFlow、PyTorch、Keras。<br><br>
+                <b>&nbsp;数据处理与分析：</b>Python（NumPy/Pandas）、文本预处理（NLTK/spaCy/Jieba）、数据可视化（Matplotlib）。<br><br>
+                <p>
                 </li>
-                <li style="text-align:center">
+
+                <li style="text-align:center" class="learningSummary">
                     <p style="margin-top: 25%">学习总结在CSDN上</p>
                     <a href="https://blog.csdn.net/Tianc666">点击移步到我的博客</a>
                 </li>
-                <li style="text-align: left">
+
+                <li style="text-align: left" class="projects">
+                    <p style="text-align: center"><b>最近在做：</b></p>
+                    &nbsp;1.&nbsp;<a href="https://hello.xiaoming100.club">记得带伞</a><br>
+                    <p style="text-align: center"><b>工作经历：</b></p>
+                    &nbsp;1.&nbsp;天财商龙餐饮系统<br>
+                    &nbsp;2.&nbsp;ViivBook(对外汉语教育全平台APP)<br>
+                    &nbsp;3.&nbsp;中水北方项目管理系统<br>
+                    &nbsp;4.&nbsp;海工经营管理系统<br>
                     <p style="text-align: center"><b>在校项目：</b></p>
-                    &nbsp;1.&nbsp;基于Spingboot+VUE的 学生信息 管理系统<br><br>
-                    &nbsp;2.&nbsp;<a href="/login">基于SSM技术的药房管理系统</a><br><br>
-                    &nbsp;3.&nbsp;基于SSM的 咖啡商城+微信订阅号<br><br>
-                    <p style="text-align: center"><b>实习内容：</b></p>
-                    &nbsp;1.&nbsp;通过CAS单点登录，将现有项目对接到统一教育平台<br><br>
-                    &nbsp;2.&nbsp;跟进教育项目组
+                    &nbsp;1.&nbsp;基于Spingboot+VUE的 学生信息 管理系统<br>
+                    &nbsp;2.&nbsp;<a href="/login">基于SSM技术的药房管理系统</a><br>
+                    &nbsp;3.&nbsp;基于SSM的 咖啡商城+微信订阅号<br>
                 </li>
             </ul>
         </div>
@@ -244,7 +290,7 @@
     margin: auto; width: 200px ; background-color: white">
     <p>
     <a href="http://beian.miit.gov.cn" name="津ICP备19009283号">津ICP备19009283号</a>
-    <img src="static/lyimg/备案图标.png" width="26" height="30" alt="图片">
+    <img src="static/lyimg/备案图标.png" width="26" height="30" alt="图片"><br>
     <a href=\"https://beian.mps.gov.cn/#/query/webSearch?code=12010302002444\" rel=\"noreferrer\" target=\"_blank\">津公网安备12010302002444</a>
     </p>
 </div>

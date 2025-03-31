@@ -6,7 +6,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>我的学习总结</title>
+    <title>EamonPlanet</title>
+    <link rel="shortcut icon" href="static/lyimg/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="static/lyimg/favicon.ico" type="image/x-icon">
+    <!-- <title>我的学习总结</title> -->
     <link rel="stylesheet" href="/static/login-ui/css/auth.css">
 
     <%--轮播效果--%>
@@ -173,7 +176,6 @@
                 <b>&nbsp;掌握数据库：</b>MySQL、Oracle、MongoDB。<br><br>
                 <b>&nbsp;掌握中间件：</b>RabbitMQ、Redis。<br><br>
                 <b>&nbsp;前端熟悉：</b>Vue.js、AngularJS、JSP、JDBC、JSTL、jQuery、Javascript、Ajax、EL。<br><br>
-                <b>&nbsp;掌握其他：</b>Vue.js、AngularJS、JSP、JDBC、JSTL、jQuery、Javascript、Ajax、EL 表达式等主流技术。<br><br>
                 <b>&nbsp;深度学习框架：</b>Hugging Face Transformers、TensorFlow、PyTorch、Keras。<br><br>
                 <b>&nbsp;数据处理与分析：</b>Python（NumPy/Pandas）、文本预处理（NLTK/spaCy/Jieba）、数据可视化（Matplotlib）。<br><br>
                 <p>
@@ -188,7 +190,7 @@
                     <p style="text-align: center"><b>最近在做：</b></p>
                     &nbsp;1.&nbsp;<a href="https://hello.xiaoming100.club">记得带伞</a><br>
                     <p style="text-align: center"><b>工作经历：</b></p>
-                    &nbsp;1.&nbsp;天财商龙餐饮系统<br>
+                    &nbsp;1.&nbsp;天财商龙餐饮闭环Saas<br>
                     &nbsp;2.&nbsp;ViivBook(对外汉语教育全平台APP)<br>
                     &nbsp;3.&nbsp;中水北方项目管理系统<br>
                     &nbsp;4.&nbsp;海工经营管理系统<br>

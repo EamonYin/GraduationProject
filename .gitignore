@@ -1,0 +1,8 @@
+# IntelliJ IDEA local project files
+.idea/
+
+# Maven build output
+target/
+
+# IntelliJ module files
+*.iml

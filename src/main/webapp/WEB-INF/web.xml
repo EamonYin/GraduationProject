@@ -8,6 +8,11 @@
          version="3.1" metadata-complete="true">
     <display-name>Ming Created The Pharmaceutical Industry</display-name>
 
+    <!-- Use the login page as the application entry point. -->
+    <welcome-file-list>
+        <welcome-file>login</welcome-file>
+    </welcome-file-list>
+
     <!--添加前端控制器DispatcherServlet-->
     <!--加载Spring配置文件-->
     <listener>
